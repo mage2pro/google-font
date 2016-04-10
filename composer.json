@@ -1,5 +1,6 @@
 {
 	"name": "mage2pro/google-font"
+	,"version": "1.0.0"
 	,"description": "Google Font API."
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/mage2pro/google-font"
