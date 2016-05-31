@@ -49,7 +49,7 @@ class Fs extends \Df\Core\O {
 	private function baseAbsolute() {return df_media_path_absolute(self::baseRelative());}
 
 	/** @return string */
-	private function baseRelative() {return df_cc_path('df', 'api', 'google', 'fonts') . '/';}
+	private function baseRelative() {return df_cc_path_t('df', 'api', 'google', 'fonts');}
 
 	/** @return Params */
 	private function params() {return $this[self::$P__PARAMS];}
