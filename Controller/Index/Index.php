@@ -1,5 +1,6 @@
 <?php
 namespace Df\GoogleFont\Controller\Index;
+use Df\Framework\Controller\Result\Json;
 use Df\GoogleFont\Font;
 use Df\GoogleFont\Font\Variant;
 use Df\GoogleFont\Font\Variant\Preview;
@@ -22,12 +23,12 @@ class Index extends \Magento\Framework\App\Action\Action {
 	 * Эта проблема была решена в серверной части применением функции @uses df_sync
 	 * @override
 	 * @see \Magento\Framework\App\Action\Action::execute()
-	 * @return \Magento\Framework\Controller\Result\Json
+	 * @return Json
 	 */
 	public function execute() {
 		df_response_cache_max();
 		$this->_actionFlag->set('', self::FLAG_NO_POST_DISPATCH, true);
-		return df_sync($this, function() {return df_controller_json(
+		return df_sync($this, function() {return Json::i(
 			Cache::i(null, 30 * 86400)->p(function() {return df_json_encode([
 				'sprite' => $this->sprite()->url()
 				,'fonts' => array_filter(df_map(function(Font $font) {
