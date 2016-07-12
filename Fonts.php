@@ -1,6 +1,7 @@
 <?php
 namespace Df\GoogleFont;
 use Df\Google\Settings as S;
+/** @method static Fonts s() */
 class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
 	/**
 	 * 2015-11-27
@@ -108,7 +109,4 @@ class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
 		}
 		return $this->{__METHOD__};
 	}
-
-	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
 }
