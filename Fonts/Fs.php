@@ -52,26 +52,5 @@ class Fs extends \Df\Core\O {
 	private function baseRelative() {return df_cc_path_t('df', 'api', 'google', 'fonts');}
 
 	/** @return Params */
-	private function params() {return $this[self::$P__PARAMS];}
-
-	/**
-	 * 2015-12-08
-	 * @override
-	 * @return void
-	 */
-	protected function _construct() {
-		parent::_construct();
-		$this->_prop(self::$P__PARAMS, Params::class);
-	}
-
-	/** @var string */
-	private static $P__PARAMS = 'params';
-
-	/**
-	 * @override
-	 * @return self
-	 */
-	public static function s() {
-		static $r; return $r ? $r : $r = new self([self::$P__PARAMS => Params::fromRequest()]);
-	}
+	private function params() {return Params::fromRequest();}
 }
