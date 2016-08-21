@@ -24,10 +24,10 @@ class Exception extends \Df\Core\Exception {
 	/**
 	 * 2015-11-27
 	 * @override
-	 * @see \Df\Core\Exception::getMessageRm()
+	 * @see \Df\Core\Exception::message()
 	 * @return string
 	 */
-	public function getMessageRm() {
+	public function message() {
 		/** @var string[] $resultA */
 		$resultA[]= "Google Fonts API error: «{$this->messageI()}».";
 		if ($this->isAccessNotConfigured()) {
