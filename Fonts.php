@@ -40,7 +40,7 @@ class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
 	 * @see \Df\Core\O::cachedGlobal()
 	 * @return string[]
 	 */
-	protected function cachedGlobal() {return self::m(__CLASS__, 'responseA');}
+	protected function cachedGlobal() {return self::_m(__CLASS__, 'responseA');}
 
 	/**
 	 * 2015-11-27

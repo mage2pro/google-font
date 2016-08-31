@@ -67,12 +67,12 @@ class Params  extends \Df\Core\O {
 	protected function _construct() {
 		parent::_construct();
 		$this
-			->_prop(self::$P__BG_COLOR, RM_V_STRING_NE)
-			->_prop(self::$P__FONT_COLOR, RM_V_STRING_NE)
-			->_prop(self::$P__FONT_SIZE, RM_V_NAT)
-			->_prop(self::$P__HEIGHT, RM_V_NAT)
-			->_prop(self::$P__MARGIN_LEFT, RM_V_NAT0)
-			->_prop(self::$P__WIDTH, RM_V_NAT)
+			->_prop(self::$P__BG_COLOR, DF_V_STRING_NE)
+			->_prop(self::$P__FONT_COLOR, DF_V_STRING_NE)
+			->_prop(self::$P__FONT_SIZE, DF_V_NAT)
+			->_prop(self::$P__HEIGHT, DF_V_NAT)
+			->_prop(self::$P__MARGIN_LEFT, DF_V_NAT0)
+			->_prop(self::$P__WIDTH, DF_V_NAT)
 		;
 	}
 
