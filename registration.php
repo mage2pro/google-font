@@ -1,3 +1,3 @@
 <?php
-use Magento\Framework\Component\ComponentRegistrar;
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Df_GoogleFont', __DIR__);
+use Magento\Framework\Component\ComponentRegistrar as R;
+R::register(R::MODULE, 'Df_GoogleFont', __DIR__);
