@@ -223,20 +223,16 @@ class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
+	 * 2017-01-12: https://3v4l.org/9YXir
 	 * @return Preview[]
 	 */
-	private function previews() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = call_user_func_array('array_merge',
-				df_map(function(Font $font) {
-					return array_map(function(Variant $variant) {
-						return $variant->preview();
-					}, array_values($font->variantsAvailable()));
-				}, $this->fonts())
-			);
-		}
-		return $this->{__METHOD__};
-	}
+	private function previews() {return dfc($this, function() {return
+		array_merge(...df_map(function(Font $font) {return
+			array_map(function(Variant $variant) {return
+				$variant->preview()
+			;}, array_values($font->variantsAvailable()))
+		;}, $this->fonts()))
+	;});}
 
 	/** @return int */
 	private function previewWidth() {return $this->params()->width();}
