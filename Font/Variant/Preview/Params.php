@@ -36,7 +36,7 @@ class Params  extends \Df\Core\O {
 		if (!isset($this->{__METHOD__})) {
 			/** @var string $result */
 			$result = '';
-			df_result_string($result);
+			df_result_s($result);
 			$this->{__METHOD__} = implode('-', [
 				$this->width(), $this->height(), $this->fontSize()
 				, implode('-', $this->fontColor()), implode('-', $this->bgColor())
