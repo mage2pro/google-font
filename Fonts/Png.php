@@ -82,12 +82,9 @@ abstract class Png extends \Df\Core\O {
 	 * @param int[] $rgba
 	 * @return int
 	 */
-	protected function colorAllocateAlpha($image, array $rgba) {
-		/** @var int|bool $result */
-		$result = imagecolorallocatealpha($image, $rgba[0], $rgba[1], $rgba[2], dfa($rgba, 3, 0));
-		df_assert(false !== $result);
-		return $result;
-	}
+	protected function colorAllocateAlpha($image, array $rgba) {return df_assert_nef(
+		imagecolorallocatealpha($image, $rgba[0], $rgba[1], $rgba[2], dfa($rgba, 3, 0))
+	);}
 
 	/**
 	 * 2015-12-08
@@ -147,21 +144,16 @@ abstract class Png extends \Df\Core\O {
 	 */
 	private function image() {
 		/** @var resource|bool $result */
-		$result = imagecreatetruecolor($this->width(), $this->height());
-		df_assert(false !== $result);
-		$r = imagesavealpha($result, true);
-		df_assert($r);
+		$result = df_assert_nef(imagecreatetruecolor($this->width(), $this->height()));
+		df_assert(imagesavealpha($result, true));
 		$this->draw($result);
 		return $result;
 	}
 
 	/** @return string */
-	private function path() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = $this->fs()->absolute($this->pathRelativeA());
-		}
-		return $this->{__METHOD__};
-	}
+	private function path() {return dfc($this, function() {return
+		$this->fs()->absolute($this->pathRelativeA())				
+	;});}
 
 	/**
 	 * 2015-12-08

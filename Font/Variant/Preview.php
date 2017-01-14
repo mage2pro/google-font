@@ -67,9 +67,8 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @return void
 	 */
 	protected function draw($image) {
-		$r = imagefill($image, 0, 0, $this->colorAllocateAlpha($image, $this->bgColor()));
-		df_assert($r);
-		$r = imagettftext(
+		df_assert(imagefill($image, 0, 0, $this->colorAllocateAlpha($image, $this->bgColor())));
+		df_assert(imagettftext(
 			$image
 			, $this->fontSize()
 			, 0
@@ -87,8 +86,7 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 			, $this->colorAllocateAlpha($image, $this->fontColor())
 			, $this->ttfPath()
 			, $this->text()
-		);
-		df_assert($r);
+		));
 	}
 
 	/**
@@ -158,8 +156,9 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 		if (!isset($this->{__METHOD__})) {
 			try {
 				/** @var int[] $box */
-				$this->{__METHOD__} = imagettfbbox($this->fontSize(), 0, $this->ttfPath(), $this->text());
-				df_assert(false !== $this->{__METHOD__});
+				$this->{__METHOD__} = df_assert_nef(
+					imagettfbbox($this->fontSize(), 0, $this->ttfPath(), $this->text())
+				);
 			}
 			catch (\Exception $e) {
 				throw new \Exception(
