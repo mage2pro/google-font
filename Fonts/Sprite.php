@@ -42,13 +42,11 @@ class Sprite extends Png {
 			/** @var Preview $preview */
 			try {
 				/** @var resource $previewImage */
-				$previewImage = imagecreatefromstring($preview->contents());
-				df_assert($previewImage);
+				$previewImage = df_assert_nef(imagecreatefromstring($preview->contents()));
 				try {
-					$r = imagecopy(
+					df_assert_nef(imagecopy(
 						$image, $previewImage, $x, $y, 0, 0, $preview->width(), $preview->height()
-					);
-					df_assert($r);
+					));
 					$this->_datumPoints[$preview->getId()] = [$x, $y];
 				}
 				finally {
