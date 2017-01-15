@@ -32,18 +32,13 @@ class Params  extends \Df\Core\O {
 	 * @see \Df\Core\O::getId()
 	 * @return string
 	 */
-	public function getId() {
-		if (!isset($this->{__METHOD__})) {
-			/** @var string $result */
-			$result = '';
-			df_result_s($result);
-			$this->{__METHOD__} = implode('-', [
-				$this->width(), $this->height(), $this->fontSize()
-				, implode('-', $this->fontColor()), implode('-', $this->bgColor())
-			]);
-		}
-		return $this->{__METHOD__};
-	}
+	public function getId() {return dfc($this, function() {return implode('-', [
+		$this->width()
+		,$this->height()
+		,$this->fontSize()
+		,implode('-', $this->fontColor())
+		,implode('-', $this->bgColor())
+	]);});}
 
 	/** @return int */
 	public function height() {return $this[self::$P__HEIGHT];}
