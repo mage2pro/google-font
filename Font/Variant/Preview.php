@@ -256,7 +256,7 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @param Params $params
 	 * @return Preview
 	 */
-	public static function i(Variant $variant, Params $params) {
+	static function i(Variant $variant, Params $params) {
 		return new self([self::$P__VARIANT => $variant, self::$P__PARAMS => $params]);
 	}
 	/** @var string */

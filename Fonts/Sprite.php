@@ -274,7 +274,7 @@ class Sprite extends Png {
 	 * @param Params $params
 	 * @return \Df\GoogleFont\Fonts\Sprite
 	 */
-	public static function i(Fonts $fonts, Params $params) {return new self([
+	static function i(Fonts $fonts, Params $params) {return new self([
 		self::$P__FONTS => $fonts, self::$P__PARAMS => $params
 	]);}
 }

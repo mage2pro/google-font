@@ -60,7 +60,7 @@ class Variant extends \Df\Core\O {
 	 * @param string $url
 	 * @return Variant
 	 */
-	public static function i(Font $font, $name, $url) {return new self([
+	static function i(Font $font, $name, $url) {return new self([
 		self::$P__FONT => $font, self::$P__NAME => $name, self::$P__URL => $url
 	]);}
 	/** @var string */

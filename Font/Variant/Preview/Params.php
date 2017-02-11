@@ -76,7 +76,7 @@ class Params  extends \Df\Core\O {
 	 * потому что параметры запроса у нас неизменны в течение всей жизни запроса.
 	 * @return Params
 	 */
-	public static function fromRequest() {
+	static function fromRequest() {
 		/** @var array(string => string|int) $params */
 		$params = [
 			self::$P__WIDTH => 400
