@@ -16,7 +16,7 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
 	 * @return string|int
 	 */
-	public function getId() {
+	function getId() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = implode(':', [$this->family(), $this->variant()->name()]);
 		}
@@ -32,13 +32,13 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
 	 * @return int
 	 */
-	public function height() {return $this->params()->height();}
+	function height() {return $this->params()->height();}
 
 	/**
 	 * 2015-12-08
 	 * @return bool
 	 */
-	public function isAvailable() {
+	function isAvailable() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = !!$this->url();
 		}
@@ -54,7 +54,7 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
 	 * @return int
 	 */
-	public function width() {return $this->params()->width();}
+	function width() {return $this->params()->width();}
 
 	/**
 	 * 2015-12-08

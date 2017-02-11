@@ -9,7 +9,7 @@ class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
 	 * @see \Countable::count()
 	 * @return int
 	 */
-	public function count() {return count($this->items());}
+	function count() {return count($this->items());}
 
 	/**
 	 * 2015-11-29
@@ -17,7 +17,7 @@ class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
 	 * @return Font
 	 * @throws \Exception
 	 */
-	public function get($family) {
+	function get($family) {
 		/** @var Font|null $result */
 		$result = dfa($this->items(), $family);
 		if (!$result) {
@@ -32,7 +32,7 @@ class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
 	 * @see \IteratorAggregate::getIterator()
 	 * @return \Traversable
 	 */
-	public function getIterator() {return new \ArrayIterator($this->items());}
+	function getIterator() {return new \ArrayIterator($this->items());}
 
 	/**
 	 * 2015-11-27

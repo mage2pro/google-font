@@ -25,7 +25,7 @@ class Index extends \Magento\Framework\App\Action\Action {
 	 * @see \Magento\Framework\App\Action\Action::execute()
 	 * @return Json
 	 */
-	public function execute() {
+	function execute() {
 		df_response_cache_max();
 		$this->_actionFlag->set('', self::FLAG_NO_POST_DISPATCH, true);
 		return df_sync($this, function() {return Json::i(

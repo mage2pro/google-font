@@ -32,7 +32,7 @@ abstract class Png extends \Df\Core\O {
 	abstract protected function pathRelativeA();
 
 	/** @return string */
-	public function contents() {
+	function contents() {
 		if (!isset($this->{__METHOD__})) {
 			$this->createIfNeeded();
 			$this->{__METHOD__} = file_get_contents($this->path());
@@ -57,7 +57,7 @@ abstract class Png extends \Df\Core\O {
 	 *
 	 * @return string
 	 */
-	public function url() {
+	function url() {
 		if (!isset($this->{__METHOD__})) {
 			try {
 				$this->createIfNeeded();

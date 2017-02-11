@@ -2,7 +2,7 @@
 namespace Df\GoogleFont\Font\Variant\Preview;
 class Params  extends \Df\Core\O {
 	/** @return int[] */
-	public function bgColor() {
+	function bgColor() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = $this->rgb($this->bgColorRaw());
 		}
@@ -10,10 +10,10 @@ class Params  extends \Df\Core\O {
 	}
 
 	/** @return string */
-	public function bgColorRaw() {return $this[self::$P__BG_COLOR];}
+	function bgColorRaw() {return $this[self::$P__BG_COLOR];}
 
 	/** @return int[] */
-	public function fontColor() {
+	function fontColor() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = $this->rgb($this->fontColorRaw());
 		}
@@ -21,10 +21,10 @@ class Params  extends \Df\Core\O {
 	}
 
 	/** @return string */
-	public function fontColorRaw() {return $this[self::$P__FONT_COLOR];}
+	function fontColorRaw() {return $this[self::$P__FONT_COLOR];}
 
 	/** @return int */
-	public function fontSize() {return $this[self::$P__FONT_SIZE];}
+	function fontSize() {return $this[self::$P__FONT_SIZE];}
 
 	/**
 	 * 2015-12-01
@@ -32,7 +32,7 @@ class Params  extends \Df\Core\O {
 	 * @see \Df\Core\O::getId()
 	 * @return string
 	 */
-	public function getId() {return dfc($this, function() {return implode('-', [
+	function getId() {return dfc($this, function() {return implode('-', [
 		$this->width()
 		,$this->height()
 		,$this->fontSize()
@@ -41,13 +41,13 @@ class Params  extends \Df\Core\O {
 	]);});}
 
 	/** @return int */
-	public function height() {return $this[self::$P__HEIGHT];}
+	function height() {return $this[self::$P__HEIGHT];}
 
 	/** @return int */
-	public function marginLeft() {return $this[self::$P__MARGIN_LEFT];}
+	function marginLeft() {return $this[self::$P__MARGIN_LEFT];}
 
 	/** @return int */
-	public function width() {return $this[self::$P__WIDTH];}
+	function width() {return $this[self::$P__WIDTH];}
 
 	/**
 	 * @param $colorS

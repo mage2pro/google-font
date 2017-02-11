@@ -27,7 +27,7 @@ class Exception extends \Df\Core\Exception {
 	 * @see \Df\Core\Exception::message()
 	 * @return string
 	 */
-	public function message() {
+	function message() {
 		/** @var string[] $resultA */
 		$resultA[]= "Google Fonts API error: «{$this->messageI()}».";
 		if ($this->isAccessNotConfigured()) {

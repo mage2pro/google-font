@@ -10,20 +10,20 @@ class Variant extends \Df\Core\O {
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::folderFamily()
 	 * @return Font
 	 */
-	public function font() {return $this[self::$P__FONT];}
+	function font() {return $this[self::$P__FONT];}
 
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::baseName()
 	 * @return string
 	 */
-	public function name() {return $this[self::$P__NAME];}
+	function name() {return $this[self::$P__NAME];}
 
 	/**
 	 * 2015-11-29
 	 * @param Params|null $params [optional]
 	 * @return Preview
 	 */
-	public function preview(Params $params = null) {
+	function preview(Params $params = null) {
 		if (!$params) {
 			$params = Params::fromRequest();
 		}
@@ -38,7 +38,7 @@ class Variant extends \Df\Core\O {
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview
 	 * @return string
 	 */
-	public function ttfPath() {
+	function ttfPath() {
 		if (!isset($this->{__METHOD__})) {
 			/** @var string $result */
 			$result = Fs::s()->absolute(['ttf', basename($this->url())]);

@@ -7,7 +7,7 @@ class Fs extends \Df\Core\O {
 	 * @param string[] $relativeParts
 	 * @return string
 	 */
-	public function absolute(array $relativeParts) {
+	function absolute(array $relativeParts) {
 		return $this->baseAbsolute() . df_cc_path($relativeParts);
 	}
 
@@ -15,7 +15,7 @@ class Fs extends \Df\Core\O {
 	 * 2015-12-08
 	 * @return string
 	 */
-	public function nameColorsSizeMargin() {
+	function nameColorsSizeMargin() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = implode('_', [
 				's' . df_pad0(2, $this->params()->fontSize())
@@ -32,13 +32,13 @@ class Fs extends \Df\Core\O {
 	 * @param string[] $params
 	 * @return string
 	 */
-	public function namePng(array $params) {return df_fs_name(implode('_', $params)) . '.png';}
+	function namePng(array $params) {return df_fs_name(implode('_', $params)) . '.png';}
 
 	/**
 	 * 2015-12-08
 	 * @return string
 	 */
-	public function nameResolution() {
+	function nameResolution() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = implode('x', [$this->params()->width(), $this->params()->height()]);
 		}

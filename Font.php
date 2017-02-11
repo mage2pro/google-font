@@ -45,7 +45,7 @@ class Font extends \Df\Core\O {
 	 * "family": "ABeeZee"
 	 * @return string
 	 */
-	public function family() {return $this['family'];}
+	function family() {return $this['family'];}
 
 	/**
 	 * 2015-11-29
@@ -53,7 +53,7 @@ class Font extends \Df\Core\O {
 	 * @return Variant
 	 * @throws \Exception
 	 */
-	public function variant($name) {
+	function variant($name) {
 		/** @var Variant|null $result */
 		$result = dfa($this->variants(), $name);
 		if (!$result) {
@@ -70,13 +70,13 @@ class Font extends \Df\Core\O {
 		]
 	 * @return string
 	 */
-	public function variantNames() {return $this['variants'];}
+	function variantNames() {return $this['variants'];}
 
 	/**
 	 * 2015-11-27
 	 * @return array(string => Variant)
 	 */
-	public function variants() {
+	function variants() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = array_combine($this->variantNames(), array_map(function($name) {
 				return Variant::i($this, $name, $this['files'][$name]);
@@ -89,7 +89,7 @@ class Font extends \Df\Core\O {
 	 * 2015-12-08
 	 * @return array(string => Variant)
 	 */
-	public function variantsAvailable() {
+	function variantsAvailable() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = array_filter($this->variants(), function(Variant $variant) {
 				return $variant->preview()->isAvailable();

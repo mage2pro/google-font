@@ -17,7 +17,7 @@ class Sprite extends Png {
 	 * @param Preview $preview
 	 * @return int[]
 	 */
-	public function datumPoint(Preview $preview) {
+	function datumPoint(Preview $preview) {
 		return dfa($this->datumPoints(), $preview->getId());
 	}
 
