@@ -1,31 +1,27 @@
 <?php
 namespace Df\GoogleFont\Fonts;
 use Df\GoogleFont\Font\Variant\Preview\Params;
-class Fs extends \Df\Core\O {
+// 2015-12-08
+class Fs {
 	/**
 	 * 2015-12-08
 	 * @param string[] $relativeParts
 	 * @return string
 	 */
-	function absolute(array $relativeParts) {
-		return $this->baseAbsolute() . df_cc_path($relativeParts);
-	}
+	function absolute(array $relativeParts) {return $this->baseAbsolute() . df_cc_path($relativeParts);}
 
 	/**
 	 * 2015-12-08
 	 * @return string
 	 */
-	function nameColorsSizeMargin() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = implode('_', [
-				's' . df_pad0(2, $this->params()->fontSize())
-				, 'f' . implode('-', $this->params()->fontColor())
-				, 'b' . implode('-', $this->params()->bgColor())
-				, 'm' . $this->params()->marginLeft()
-			]);
-		}
-		return $this->{__METHOD__};
-	}
+	function nameColorsSizeMargin() {return dfc($this, function() {$p = $this->params(); return
+		implode('_', [
+			's' . df_pad0(2, $p->fontSize())
+			,'f' . implode('-', $p->fontColor())
+			,'b' . implode('-', $p->bgColor())
+			,'m' . $p->marginLeft()
+		])
+	;});}
 
 	/**
 	 * 2015-12-08
@@ -38,12 +34,9 @@ class Fs extends \Df\Core\O {
 	 * 2015-12-08
 	 * @return string
 	 */
-	function nameResolution() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = implode('x', [$this->params()->width(), $this->params()->height()]);
-		}
-		return $this->{__METHOD__};
-	}
+	function nameResolution() {return dfc($this, function() {$p = $this->params(); return
+		implode('x', [$p->width(), $p->height()])
+	;});}
 
 	/** @return string */
 	private function baseAbsolute() {return df_media_path_absolute(self::baseRelative());}
@@ -53,4 +46,10 @@ class Fs extends \Df\Core\O {
 
 	/** @return Params */
 	private function params() {return Params::fromRequest();}
+
+	/**
+	 * 2017-03-15
+	 * @return self
+	 */
+	static function s() {static $r; return $r ? $r : $r = new self;}
 }
