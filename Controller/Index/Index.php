@@ -3,7 +3,6 @@ namespace Df\GoogleFont\Controller\Index;
 use Df\Framework\Controller\Result\Json;
 use Df\GoogleFont\Font;
 use Df\GoogleFont\Font\Variant;
-use Df\GoogleFont\Font\Variant\Preview;
 use Df\GoogleFont\Font\Variant\Preview\Params;
 use Df\GoogleFont\Fonts as _Fonts;
 use Df\GoogleFont\Fonts\Sprite;
