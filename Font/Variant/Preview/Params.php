@@ -57,7 +57,7 @@ class Params  extends \Df\Core\O {
 
 	/**
 	 * @override
-	 * @return void
+	 * @see \Df\Core\O::_construct()
 	 */
 	protected function _construct() {
 		parent::_construct();

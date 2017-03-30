@@ -6,7 +6,6 @@ abstract class Png extends \Df\Core\O {
 	 * 2015-12-08
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @param resource $image
-	 * @return void
 	 */
 	abstract protected function draw($image);
 
@@ -90,7 +89,6 @@ abstract class Png extends \Df\Core\O {
 	 * 2015-12-08
 	 * @used-by \Df\GoogleFont\Fonts\Png::createIfNeeded()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoints()
-	 * @return void
 	 */
 	protected function create() {
 		ob_start();
@@ -114,7 +112,6 @@ abstract class Png extends \Df\Core\O {
 	 * @used-by \Df\GoogleFont\Fonts\Png::contents()
 	 * @used-by \Df\GoogleFont\Fonts\Png::url()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoint()
-	 * @return void
 	 */
 	protected function createIfNeeded() {
 		if ($this->needToCreate()) {
@@ -157,8 +154,8 @@ abstract class Png extends \Df\Core\O {
 
 	/**
 	 * 2015-12-08
-	 * @override
-	 * @return void
+	 * @override 
+	 * @see \Df\Core\O::_construct()
 	 */
 	protected function _construct() {
 		parent::_construct();

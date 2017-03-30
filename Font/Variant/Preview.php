@@ -64,7 +64,6 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @see \Df\GoogleFont\Fonts\Png::draw()
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @param resource $image
-	 * @return void
 	 */
 	protected function draw($image) {
 		df_assert(imagefill($image, 0, 0, $this->colorAllocateAlpha($image, $this->bgColor())));
@@ -243,7 +242,7 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 
 	/**
 	 * @override
-	 * @return void
+	 * @see \Df\GoogleFont\Fonts\Png
 	 */
 	protected function _construct() {
 		parent::_construct();

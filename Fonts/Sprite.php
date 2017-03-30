@@ -27,7 +27,6 @@ class Sprite extends Png {
 	 * @see \Df\GoogleFont\Fonts\Png::draw()
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @param resource $image
-	 * @return void
 	 */
 	protected function draw($image) {
 		/** @var int $x */
@@ -252,7 +251,7 @@ class Sprite extends Png {
 	/**
 	 * 2015-12-08
 	 * @override
-	 * @return void
+	 * @see \Df\GoogleFont\Fonts\Png::_construct()
 	 */
 	protected function _construct() {
 		parent::_construct();
