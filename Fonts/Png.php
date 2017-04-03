@@ -94,17 +94,11 @@ abstract class Png extends \Df\Core\O {
 		ob_start();
 		try {
 			$image = $this->image();
-			try {
-				imagepng($this->image());
-			}
-			finally {
-				imagedestroy($image);
-			}
-			df_media_write($this->path(), ob_get_contents());
+			try {imagepng($this->image());}
+			finally {imagedestroy($image);}
+			df_file_write($this->path(), ob_get_contents());
 		}
-		finally {
-			ob_end_clean();
-		}
+		finally {ob_end_clean();}
 	}
 
 	/**

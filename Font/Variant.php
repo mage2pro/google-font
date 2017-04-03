@@ -38,17 +38,13 @@ class Variant extends \Df\Core\O {
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview
 	 * @return string
 	 */
-	function ttfPath() {
-		if (!isset($this->{__METHOD__})) {
-			/** @var string $result */
-			$result = Fs::s()->absolute(['ttf', basename($this->url())]);
-			if (!file_exists($result)) {
-				df_media_write($result, file_get_contents($this->url()));
-			}
-			$this->{__METHOD__} = $result;
+	function ttfPath() {return dfc($this, function() {
+		/** @var string $result */
+		if (!file_exists($result = Fs::s()->absolute(['ttf', basename($this->url())]))) {
+			df_file_write($result, file_get_contents($this->url()));
 		}
-		return $this->{__METHOD__};
-	}
+		return $result;
+	});}
 
 	/** @return string */
 	private function url() {return $this[self::$P__URL];}
