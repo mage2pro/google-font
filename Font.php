@@ -63,12 +63,8 @@ class Font extends \Df\Core\O {
 	}
 
 	/**
-	 * 2015-11-28
-		"variants": [
-			"regular",
-			"italic"
-		]
-	 * @return string
+	 * 2015-11-28 "variants": ["regular", "italic"]
+	 * @return string[]
 	 */
 	function variantNames() {return $this['variants'];}
 
@@ -76,25 +72,19 @@ class Font extends \Df\Core\O {
 	 * 2015-11-27
 	 * @return array(string => Variant)
 	 */
-	function variants() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = array_combine($this->variantNames(), array_map(function($name) {
-				return Variant::i($this, $name, $this['files'][$name]);
-			}, $this->variantNames()));
-		}
-		return $this->{__METHOD__};
-	}
+	function variants() {return dfc($this, function() {return array_combine(
+		$this->variantNames(), array_map(function($name) {return Variant::i(
+			$this, $name, $this['files'][$name]
+		);}, $this->variantNames())
+	);});}
 
 	/**
 	 * 2015-12-08
 	 * @return array(string => Variant)
 	 */
-	function variantsAvailable() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = array_filter($this->variants(), function(Variant $variant) {
-				return $variant->preview()->isAvailable();
-			});
-		}
-		return $this->{__METHOD__};
-	}
+	function variantsAvailable() {return dfc($this, function() {return array_filter(
+		$this->variants(), function(Variant $variant) {return
+			$variant->preview()->isAvailable()
+		;}
+	);});}
 }
