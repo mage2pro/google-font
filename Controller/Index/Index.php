@@ -6,7 +6,6 @@ use Df\GoogleFont\Font\Variant;
 use Df\GoogleFont\Font\Variant\Preview\Params;
 use Df\GoogleFont\Fonts as _Fonts;
 use Df\GoogleFont\Fonts\Sprite;
-use Df\Core\Cache;
 // 2015-12-08
 /** @final Unable to use the PHP «final» keyword here because of the M2 code generation. */
 class Index extends \Magento\Framework\App\Action\Action {
@@ -33,16 +32,15 @@ class Index extends \Magento\Framework\App\Action\Action {
 	function execute() {
 		df_response_cache_max();
 		$this->_actionFlag->set('', self::FLAG_NO_POST_DISPATCH, true);
-		return df_sync($this, function() {return Json::i(
-			Cache::i(null, 30 * 86400)->p(function() {return df_json_encode([
+		return df_sync($this, function() {return Json::i(df_cache_get_simple(df_request(), function() {return
+			df_json_encode([
 				'sprite' => $this->sprite()->url()
-				,'fonts' => array_filter(df_map(function(Font $font) {
-					return array_filter(array_map(function(Variant $variant) {
-						return $this->sprite()->datumPoint($variant->preview());
-					}, $font->variants()));
-				}, _Fonts::s()))
-			]);}, __METHOD__, df_request(), null)
-		);});
+				,'fonts' => array_filter(df_map(function(Font $font) {return array_filter(array_map(
+					function(Variant $variant) {return $this->sprite()->datumPoint($variant->preview());}
+					,$font->variants()
+				));}, _Fonts::s()))
+			])
+		;}));});
 	}
 
 	/**
@@ -50,7 +48,7 @@ class Index extends \Magento\Framework\App\Action\Action {
 	 * @used-by execute()
 	 * @return Sprite
 	 */
-	private function sprite() {return dfc($this, function() {return
-		Sprite::i(_Fonts::s(), Params::fromRequest())
-	;});}
+	private function sprite() {return dfc($this, function() {return Sprite::i(
+		_Fonts::s(), Params::fromRequest()
+	);});}
 }
