@@ -60,51 +60,39 @@ class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
 	 * @return array(string => mixed)
 	 * @throws \Exception
 	 */
-	private function responseA() {
-		if (!isset($this->{__METHOD__})) {
-			/** @var bool $debug */
-			$debug = true;
-			/** @var array(string => mixed) $result */
-			$result = df_json_decode(
-				$debug || !S::s()->serverApiKey()
-				? df_http_get('https://mage2.pro/google-fonts.json')
-				: df_http_get('https://www.googleapis.com/webfonts/v1/webfonts', [
-					'key' => S::s()->serverApiKey(), 'sort' => 'alpha'
-				])
-			);
-			/**
-			 * 2015-11-17
-			 * В документации об этом ни слова не сказано,
-			 * однако в случае сбоя Google API возвращает JSON следующией структуры:
-				{
-					error: {
-						errors: [
-							{
-								domain: "usageLimits",
-								reason: "accessNotConfigured",
-								message: "Access Not Configured. The API (Google Fonts Developer API) is not enabled for your project. Please use the Google Developers Console to update your configuration.",
-								extendedHelp: "https://console.developers.google.com"
-							}
-						],
-						code: 403,
-						message: "Access Not Configured. The API (Google Fonts Developer API) is not enabled for your project. Please use the Google Developers Console to update your configuration."
-					}
-				}
-			 * https://developers.google.com/fonts/docs/developer_api
-			 */
-			/** @var array(string => mixed)|null $result */
-			$error = dfa($result, 'error');
-			if ($error) {
-				throw (new Exception($error))->standard();
-			}
-			/**
-			 * 2015-11-27
-			 * https://developers.google.com/fonts/docs/developer_api#Example
-			 */
-			$result = dfa($result, 'items');
-			df_result_array($result);
-			$this->{__METHOD__} = $result;
+	private function responseA() {return dfc($this, function() {
+		$debug = true; /** @var bool $debug */
+		$result = df_json_decode(
+			$debug || !S::s()->serverApiKey()
+			? df_http_get('https://mage2.pro/google-fonts.json')
+			: df_http_get('https://www.googleapis.com/webfonts/v1/webfonts', [
+				'key' => S::s()->serverApiKey(), 'sort' => 'alpha'
+			])
+		); /** @var array(string => mixed) $result */
+		/**
+		 * 2015-11-17
+		 * В документации об этом ни слова не сказано,
+		 * однако в случае сбоя Google API возвращает JSON следующией структуры:
+		 *	{
+		 *		error: {
+		 *			errors: [
+		 *				{
+		 *					domain: "usageLimits",
+		 *					reason: "accessNotConfigured",
+		 *					message: "Access Not Configured. The API (Google Fonts Developer API) is not enabled for your project. Please use the Google Developers Console to update your configuration.",
+		 *					extendedHelp: "https://console.developers.google.com"
+		 *				}
+		 *			],
+		 *			code: 403,
+		 *			message: "Access Not Configured. The API (Google Fonts Developer API) is not enabled for your project. Please use the Google Developers Console to update your configuration."
+		 *		}
+		 *	}
+		 * https://developers.google.com/fonts/docs/developer_api
+		 */
+		if ($error = dfa($result, 'error')) { /** @var array(string => mixed)|null $error */
+			throw (new Exception($error))->standard();
 		}
-		return $this->{__METHOD__};
-	}
+		// 2015-11-27 https://developers.google.com/fonts/docs/developer_api#Example
+		return df_result_array(dfa($result, 'items'));
+	});}
 }
