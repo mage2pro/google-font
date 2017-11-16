@@ -1,6 +1,6 @@
 <?php
 namespace Df\GoogleFont\Controller\Index;
-use Df\Framework\Controller\Response\Json;
+use Df\Framework\W\Response\Json;
 use Df\GoogleFont\Font;
 use Df\GoogleFont\Font\Variant;
 use Df\GoogleFont\Font\Variant\Preview\Params;
