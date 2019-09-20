@@ -60,7 +60,7 @@ abstract class Png extends \Df\Core\O {
 		if (!isset($this->{__METHOD__})) {
 			try {
 				$this->createIfNeeded();
-				$this->{__METHOD__} = df_media_url($this->path());
+				$this->{__METHOD__} = df_media_path2url($this->path());
 			}
 			catch (\Exception $e) {
 				df_log($e->getMessage());
