@@ -42,11 +42,11 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-01
 	 * Изначально реализация была «ленивой»:
-			$this->exists()
-			? df_media_url($this->path())
-			: df_url_frontend('df-api/google/fontPreview', ['_query' => [
-				'family' => implode(':', [$this->family(), $this->variant()->name()])
-			] + $this->params()->getData()])
+	 *		$this->exists()
+	 *		? df_media_path2url($this->path())
+	 *		: df_url_frontend('df-api/google/fontPreview', ['_query' => [
+	 *			'family' => implode(':', [$this->family(), $this->variant()->name()])
+	 *		] + $this->params()->getData()])
 	 * Однако оказалось, что она крайне неэффективна:
 	 * в клиентской части мы создаём много тегов IMG, и при добавлении в DOM
 	 * браузер сразу делает кучу запросов к серверу по адресу src.
