@@ -77,18 +77,15 @@ class Params  extends \Df\Core\O {
 	 * @return Params
 	 */
 	static function fromRequest() {
-		/** @var array(string => string|int) $params */
-		$params = [
+		$p = [
 			self::$P__WIDTH => 400
 			,self::$P__HEIGHT => 50
 			,self::$P__FONT_SIZE => 14
 			,self::$P__FONT_COLOR => '0|0|0|0'
 			,self::$P__BG_COLOR => '255|255|255|127'
 			,self::$P__MARGIN_LEFT => 0
-		];
-		static $r; return $r ? $r : $r = new self(
-			dfa_select(df_request() + $params, array_keys($params))
-		);
+		]; /** @var array(string => string|int) $p */
+		static $r; return $r ? $r : $r = new self(dfa(df_request() + $p, array_keys($p)));
 	}
 
 	/** @var string */
