@@ -221,18 +221,12 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 	private function marginLeft() {return $this->params()->marginLeft();}
 
 	/**
-	 * Текст для отображения.
-	 * 2015-12-10
+	 * 2015-12-10 Текст для отображения.
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::baseline()
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
 	 * @return string
 	 */
-	private function text() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = "{$this->family()} ({$this->variant()->name()})";
-		}
-		return $this->{__METHOD__};
-	}
+	private function text() {return dfc($this, function() {return df_desc($this->family(), $this->variant()->name());});}
 
 	/** @return string */
 	private function ttfPath() {return $this->variant()->ttfPath();}
