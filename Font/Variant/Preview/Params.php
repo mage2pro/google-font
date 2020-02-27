@@ -1,6 +1,6 @@
 <?php
 namespace Df\GoogleFont\Font\Variant\Preview;
-class Params  extends \Df\Core\O {
+class Params  extends \Df\Core\OLegacy {
 	/** @return int[] */
 	function bgColor() {
 		if (!isset($this->{__METHOD__})) {
@@ -29,7 +29,7 @@ class Params  extends \Df\Core\O {
 	/**
 	 * 2015-12-01
 	 * @override
-	 * @see \Df\Core\O::getId()
+	 * @see \Df\Core\OLegacy::getId()
 	 * @return string
 	 */
 	function getId() {return dfc($this, function() {return implode('-', [
@@ -57,7 +57,7 @@ class Params  extends \Df\Core\O {
 
 	/**
 	 * @override
-	 * @see \Df\Core\O::_construct()
+	 * @see \Df\Core\OLegacy::_construct()
 	 */
 	protected function _construct() {
 		parent::_construct();

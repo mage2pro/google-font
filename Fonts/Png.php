@@ -1,7 +1,7 @@
 <?php
 namespace Df\GoogleFont\Fonts;
 use Df\GoogleFont\Font\Variant\Preview\Params;
-abstract class Png extends \Df\Core\O {
+abstract class Png extends \Df\Core\OLegacy {
 	/**
 	 * 2015-12-08
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
@@ -149,7 +149,7 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-08
 	 * @override 
-	 * @see \Df\Core\O::_construct()
+	 * @see \Df\Core\OLegacy::_construct()
 	 */
 	protected function _construct() {
 		parent::_construct();

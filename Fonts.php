@@ -2,7 +2,7 @@
 namespace Df\GoogleFont;
 use Df\Google\Settings as S;
 /** @method static Fonts s() */
-class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
+class Fonts extends \Df\Core\OLegacy implements \IteratorAggregate, \Countable {
 	/**
 	 * 2015-11-27
 	 * @override
@@ -37,7 +37,7 @@ class Fonts extends \Df\Core\O implements \IteratorAggregate, \Countable {
 	/**
 	 * 2015-11-27
 	 * @override
-	 * @see \Df\Core\O::cachedGlobal()
+	 * @see \Df\Core\OLegacy::cachedGlobal()
 	 * @return string[]
 	 */
 	protected function cachedGlobal() {return self::_m(__CLASS__, 'responseA');}

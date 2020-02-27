@@ -5,7 +5,7 @@ use Df\GoogleFont\Font\Variant\Preview;
 use Df\GoogleFont\Font\Variant\Preview\Params;
 use Df\GoogleFont\Fonts;
 use Df\GoogleFont\Fonts\Fs;
-class Variant extends \Df\Core\O {
+class Variant extends \Df\Core\OLegacy {
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::folderFamily()
 	 * @return Font
