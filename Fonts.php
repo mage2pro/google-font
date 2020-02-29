@@ -1,8 +1,9 @@
 <?php
 namespace Df\GoogleFont;
+use ArrayIterator as AI;
 use Df\Google\Settings as S;
 /** @method static Fonts s() */
-class Fonts extends \Df\Core\OLegacy implements \IteratorAggregate, \Countable {
+class Fonts extends \Df\Core\OLegacy implements AI, \Countable {
 	/**
 	 * 2015-11-27
 	 * @override
@@ -30,9 +31,10 @@ class Fonts extends \Df\Core\OLegacy implements \IteratorAggregate, \Countable {
 	 * 2015-11-27
 	 * @override
 	 * @see \IteratorAggregate::getIterator()
-	 * @return \Traversable
+	 * https://www.php.net/manual/iteratoraggregate.getiterator.php
+	 * @return AI
 	 */
-	function getIterator() {return new \ArrayIterator($this->items());}
+	function getIterator() {return new AI($this->items());}
 
 	/**
 	 * 2015-11-27
