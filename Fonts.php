@@ -3,7 +3,7 @@ namespace Df\GoogleFont;
 use ArrayIterator as AI;
 use Df\Google\Settings as S;
 /** @method static Fonts s() */
-class Fonts extends \Df\Core\OLegacy implements AI, \Countable {
+class Fonts extends \Df\Core\OLegacy implements \Countable, \IteratorAggregate {
 	/**
 	 * 2015-11-27
 	 * @override
