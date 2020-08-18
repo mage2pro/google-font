@@ -1,6 +1,6 @@
 <?php
 namespace Df\GoogleFont\Font\Variant\Preview;
-class Params  extends \Df\Core\OLegacy {
+final class Params  extends \Df\Core\O {
 	/** @return int[] */
 	function bgColor() {
 		if (!isset($this->{__METHOD__})) {
@@ -56,34 +56,18 @@ class Params  extends \Df\Core\OLegacy {
 	private function rgb($colorS) {return df_int(explode('|', $colorS));}
 
 	/**
-	 * @override
-	 * @see \Df\Core\OLegacy::_construct()
-	 */
-	protected function _construct() {
-		parent::_construct();
-		$this
-			->_prop(self::$P__BG_COLOR, DF_V_STRING_NE)
-			->_prop(self::$P__FONT_COLOR, DF_V_STRING_NE)
-			->_prop(self::$P__FONT_SIZE, DF_V_NAT)
-			->_prop(self::$P__HEIGHT, DF_V_NAT)
-			->_prop(self::$P__MARGIN_LEFT, DF_V_NAT0)
-			->_prop(self::$P__WIDTH, DF_V_NAT)
-		;
-	}
-
-	/**
 	 * Этот метод возвращает объект-одиночку,
 	 * потому что параметры запроса у нас неизменны в течение всей жизни запроса.
 	 * @return Params
 	 */
 	static function fromRequest() {
 		$p = [
-			self::$P__WIDTH => 400
-			,self::$P__HEIGHT => 50
-			,self::$P__FONT_SIZE => 14
+			self::$P__BG_COLOR => '255|255|255|127'
 			,self::$P__FONT_COLOR => '0|0|0|0'
-			,self::$P__BG_COLOR => '255|255|255|127'
+			,self::$P__FONT_SIZE => 14
+			,self::$P__HEIGHT => 50
 			,self::$P__MARGIN_LEFT => 0
+			,self::$P__WIDTH => 400
 		]; /** @var array(string => string|int) $p */
 		static $r; return $r ? $r : $r = new self(dfa(df_request() + $p, array_keys($p)));
 	}
