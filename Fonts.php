@@ -3,7 +3,7 @@ namespace Df\GoogleFont;
 use ArrayIterator as AI;
 use Df\Google\Settings as S;
 /** @method static Fonts s() */
-class Fonts extends \Df\Core\OLegacy implements \Countable, \IteratorAggregate {
+final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	/**
 	 * 2015-11-27
 	 * @override
@@ -19,12 +19,10 @@ class Fonts extends \Df\Core\OLegacy implements \Countable, \IteratorAggregate {
 	 * @throws \Exception
 	 */
 	function get($family) {
-		/** @var Font|null $result */
-		$result = dfa($this->items(), $family);
-		if (!$result) {
+		if (!($r = dfa($this->items(), $family))) { /** @var Font|null $r */
 			throw new \Exception("Font family is not found: «{$family}».");
 		}
-		return $result;
+		return $r;
 	}
 
 	/**
@@ -38,22 +36,12 @@ class Fonts extends \Df\Core\OLegacy implements \Countable, \IteratorAggregate {
 
 	/**
 	 * 2015-11-27
-	 * @override
-	 * @see \Df\Core\OLegacy::cachedGlobal()
-	 * @return string[]
-	 */
-	protected function cachedGlobal() {return self::_m(__CLASS__, 'responseA');}
-
-	/**
-	 * 2015-11-27
 	 * @return array(string => Font)
 	 */
 	private function items() {return dfc($this, function() {
-		/** @var mixed $result */
-		/** @var Font[] $fonts */
+		/** @var mixed $result */ /** @var Font[] $fonts */
 		$fonts = array_map(function(array $itemA) {return new Font($itemA);}, $this->responseA());
-		/** @var string[] $families */
-		$families = array_map(function(Font $font) {return $font->family();}, $fonts);
+		$families = array_map(function(Font $font) {return $font->family();}, $fonts); /** @var string[] $families */
 		return array_combine($families, $fonts);
 	});}
 
