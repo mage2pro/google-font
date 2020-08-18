@@ -5,7 +5,7 @@ use Df\GoogleFont\Font\Variant;
 use Df\GoogleFont\Font\Variant\Preview;
 use Df\GoogleFont\Font\Variant\Preview\Params;
 use Df\GoogleFont\Fonts;
-class Sprite extends Png {
+final class Sprite extends Png {
 	/**
 	 * 2015-12-08
 	 * Возвращает координаты левого верхнего угла изображения шрифта в общей картинке-спрайте.
@@ -17,9 +17,7 @@ class Sprite extends Png {
 	 * @param Preview $preview
 	 * @return int[]
 	 */
-	function datumPoint(Preview $preview) {
-		return dfa($this->datumPoints(), $preview->getId());
-	}
+	function datumPoint(Preview $preview) {return dfa($this->datumPoints(), $preview->getId());}
 
 	/**
 	 * 2015-12-08
@@ -29,23 +27,17 @@ class Sprite extends Png {
 	 * @param resource $image
 	 */
 	protected function draw($image) {
-		/** @var int $x */
-		$x = 0;
-		/** @var int $y */
-		$y = 0;
+		$x = 0; /** @var int $x */
+		$y = 0; /** @var int $y */
 		$this->_datumPoints = [];
 		df_assert_nef(imagefill($image, 0, 0, $this->colorAllocateAlpha($image, $this->bgColor())));
 		// http://stackoverflow.com/a/1397584/254475
 		imagealphablending($image, true);
-		foreach ($this->previews() as $preview) {
-			/** @var Preview $preview */
+		foreach ($this->previews() as $preview) { /** @var Preview $preview */
 			try {
-				/** @var resource $previewImage */
-				$previewImage = df_assert_nef(imagecreatefromstring($preview->contents()));
+				$previewImage = df_assert_nef(imagecreatefromstring($preview->contents())); /** @var resource $previewImage */
 				try {
-					df_assert_nef(imagecopy(
-						$image, $previewImage, $x, $y, 0, 0, $preview->width(), $preview->height()
-					));
+					df_assert_nef(imagecopy($image, $previewImage, $x, $y, 0, 0, $preview->width(), $preview->height()));
 					$this->_datumPoints[$preview->getId()] = [$x, $y];
 				}
 				finally {
@@ -65,9 +57,8 @@ class Sprite extends Png {
 	}
 
 	/**
-	 * 2015-12-08
+	 * 2015-12-08 Высота спрайта
 	 * @override
-	 * Высота спрайта.
 	 * @see \Df\GoogleFont\Fonts\Png::height()
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @return int
@@ -87,25 +78,19 @@ class Sprite extends Png {
 			 * Поэтому добавляем место для ещё одого ряда снизу,
 			 * чтобы последнему ряду уж наверняка хватило места.
 			 */
-			$this->{__METHOD__} =
-				ceil($this->square() / $this->width())
-				+ $this->previewHeight() + $this->marginY()
-			;
+			$this->{__METHOD__} = ceil($this->square() / $this->width()) + $this->previewHeight() + $this->marginY();
 		}
 		return $this->{__METHOD__};
 	}
 
 	/**
-	 * 2015-12-08
-	 * Кэшировать результат нельзя!
+	 * 2015-12-08 Кэшировать результат нельзя!
 	 * @override
 	 * @see \Df\GoogleFont\Fonts\Png::needToCreate()
 	 * @used-by \Df\GoogleFont\Fonts\Png::createIfNeeded()
 	 * @return bool
 	 */
-	protected function needToCreate() {
-		return !file_exists($this->pathToDatumPoints()) || parent::needToCreate();
-	}
+	protected function needToCreate() {return !file_exists($this->pathToDatumPoints()) || parent::needToCreate();}
 
 	/**
 	 * 2015-12-08
@@ -114,9 +99,7 @@ class Sprite extends Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::path()
 	 * @return string[]
 	 */
-	protected function pathRelativeA() {
-		return [$this->pathRelativeBase(), $this->fs()->namePng(['i'])];
-	}
+	protected function pathRelativeA() {return [$this->pathRelativeBase(), $this->fs()->namePng(['i'])];}
 
 	/**
 	 * 2015-12-08
@@ -239,24 +222,11 @@ class Sprite extends Png {
 	 */
 	private function square() {
 		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} =
-				($this->previewHeight() + $this->marginY())
-				* $this->previewWidth()
-				* count($this->previews())
-			;
+			$this->{__METHOD__} = ($this->previewHeight() + $this->marginY()) * $this->previewWidth() * count($this->previews());
 		}
 		return $this->{__METHOD__};
 	}
 
-	/**
-	 * 2015-12-08
-	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::_construct()
-	 */
-	protected function _construct() {
-		parent::_construct();
-		$this->_prop(self::$P__FONTS, Fonts::class);
-	}
 	/** @var string */
 	private static $P__FONTS = 'fonts';
 
@@ -273,7 +243,5 @@ class Sprite extends Png {
 	 * @param Params $params
 	 * @return \Df\GoogleFont\Fonts\Sprite
 	 */
-	static function i(Fonts $fonts, Params $params) {return new self([
-		self::$P__FONTS => $fonts, self::$P__PARAMS => $params
-	]);}
+	static function i(Fonts $fonts, Params $params) {return new self([self::$P__FONTS => $fonts, self::$P__PARAMS => $params]);}
 }

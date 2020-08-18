@@ -1,7 +1,8 @@
 <?php
 namespace Df\GoogleFont\Fonts;
 use Df\GoogleFont\Font\Variant\Preview\Params;
-abstract class Png extends \Df\Core\OLegacy {
+/** @see \Df\GoogleFont\Fonts\Sprite */
+abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-08
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
@@ -146,15 +147,6 @@ abstract class Png extends \Df\Core\OLegacy {
 		$this->fs()->absolute($this->pathRelativeA())				
 	;});}
 
-	/**
-	 * 2015-12-08
-	 * @override 
-	 * @see \Df\Core\OLegacy::_construct()
-	 */
-	protected function _construct() {
-		parent::_construct();
-		$this->_prop(self::$P__PARAMS, Params::class);
-	}
 	/** @var string */
 	protected static $P__PARAMS = 'params';
 }
