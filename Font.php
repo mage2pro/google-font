@@ -28,7 +28,7 @@ use Df\GoogleFont\Font\Variant;
  *			"files": {"regular": "http://fonts.gstatic.com/s/abel/v6/RpUKfqNxoyNe_ka23bzQ2A.ttf"}
  *		}
  */
-class Font extends \Df\Core\OLegacy {
+final class Font extends \Df\Core\O {
 	/**
 	 * 2015-11-28
 	 * "family": "ABeeZee"
@@ -43,12 +43,11 @@ class Font extends \Df\Core\OLegacy {
 	 * @throws \Exception
 	 */
 	function variant($name) {
-		/** @var Variant|null $result */
-		$result = dfa($this->variants(), $name);
-		if (!$result) {
+		$r = dfa($this->variants(), $name); /** @var Variant|null $r */
+		if (!$r) {
 			throw new \Exception("Variant «{$name}» of font «{$this->family()}» is not found.");
 		}
-		return $result;
+		return $r;
 	}
 
 	/**
@@ -62,9 +61,8 @@ class Font extends \Df\Core\OLegacy {
 	 * @return array(string => Variant)
 	 */
 	function variants() {return dfc($this, function() {return array_combine(
-		$this->variantNames(), array_map(function($name) {return Variant::i(
-			$this, $name, $this['files'][$name]
-		);}, $this->variantNames())
+		$this->variantNames()
+		,array_map(function($name) {return Variant::i($this, $name, $this['files'][$name]);}, $this->variantNames())
 	);});}
 
 	/**
