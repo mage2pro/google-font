@@ -3,9 +3,8 @@ namespace Df\GoogleFont\Font;
 use Df\GoogleFont\Font;
 use Df\GoogleFont\Font\Variant\Preview;
 use Df\GoogleFont\Font\Variant\Preview\Params;
-use Df\GoogleFont\Fonts;
 use Df\GoogleFont\Fonts\Fs;
-class Variant extends \Df\Core\OLegacy {
+final class Variant extends \Df\Core\O {
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::folderFamily()
 	 * @return Font
@@ -59,6 +58,7 @@ class Variant extends \Df\Core\OLegacy {
 	static function i(Font $font, $name, $url) {return new self([
 		self::$P__FONT => $font, self::$P__NAME => $name, self::$P__URL => $url
 	]);}
+
 	/** @var string */
 	private static $P__FONT = 'font';
 	/** @var string */
