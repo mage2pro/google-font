@@ -6,7 +6,7 @@ use Df\GoogleFont\Font\Variant;
 use Df\GoogleFont\Font\Variant\Preview\Params;
 use Df\GoogleFont\Fonts as _Fonts;
 use Df\GoogleFont\Fonts\Sprite;
-// 2015-12-08
+# 2015-12-08
 /** @final Unable to use the PHP «final» keyword here because of the M2 code generation. */
 class Index extends \Magento\Framework\App\Action\Action {
 	/**

@@ -10,8 +10,6 @@ class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * потому что он создаёт идентификатор случайным образом,
 	 * а нам нужно, чтобы идентификатор был одним и тем же
 	 * для двух любых запросов к серверу (чтобы сопоставлять preview и datumPoints).
-	 * @override
-	 * @see \Df\Core\OLegacy::getId()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoint()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
 	 * @return string|int

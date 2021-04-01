@@ -31,7 +31,7 @@ final class Sprite extends Png {
 		$y = 0; /** @var int $y */
 		$this->_datumPoints = [];
 		df_assert_nef(imagefill($image, 0, 0, $this->colorAllocateAlpha($image, $this->bgColor())));
-		// http://stackoverflow.com/a/1397584/254475
+		# http://stackoverflow.com/a/1397584/254475
 		imagealphablending($image, true);
 		foreach ($this->previews() as $preview) { /** @var Preview $preview */
 			try {

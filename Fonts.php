@@ -82,7 +82,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 		if ($error = dfa($result, 'error')) { /** @var array(string => mixed)|null $error */
 			throw (new Exception($error))->standard();
 		}
-		// 2015-11-27 https://developers.google.com/fonts/docs/developer_api#Example
+		# 2015-11-27 https://developers.google.com/fonts/docs/developer_api#Example
 		return df_result_array(dfa($result, 'items'));
 	});}
 }
