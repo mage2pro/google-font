@@ -135,11 +135,10 @@ abstract class Png extends \Df\Core\O {
 	 * @return resource
 	 */
 	private function image() {
-		/** @var resource|bool $result */
-		$result = df_assert_nef(imagecreatetruecolor($this->width(), $this->height()));
-		df_assert(imagesavealpha($result, true));
-		$this->draw($result);
-		return $result;
+		$r = df_assert_nef(imagecreatetruecolor($this->width(), $this->height())); /** @var resource|bool $r */
+		df_assert(imagesavealpha($r, true));
+		$this->draw($r);
+		return $r;
 	}
 
 	/** @return string */
