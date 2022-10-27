@@ -232,7 +232,7 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoint()
+	 * @used-by self::datumPoint()
 	 * @var array(string => int[])
 	 */
 	private $_datumPoints = [];

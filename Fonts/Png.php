@@ -5,28 +5,28 @@ use Df\GoogleFont\Font\Variant\Preview\Params;
 abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
+	 * @used-by self::image()
 	 * @param resource $image
 	 */
 	abstract protected function draw($image);
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
+	 * @used-by self::image()
 	 * @return int
 	 */
 	abstract protected function height();
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
+	 * @used-by self::image()
 	 * @return int
 	 */
 	abstract protected function width();
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Fonts\Png::path()
+	 * @used-by self::path()
 	 * @return string[]
 	 */
 	abstract protected function pathRelativeA();
@@ -88,7 +88,7 @@ abstract class Png extends \Df\Core\O {
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Fonts\Png::createIfNeeded()
+	 * @used-by self::createIfNeeded()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoints()
 	 */
 	protected function create() {
@@ -104,8 +104,8 @@ abstract class Png extends \Df\Core\O {
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Fonts\Png::contents()
-	 * @used-by \Df\GoogleFont\Fonts\Png::url()
+	 * @used-by self::contents()
+	 * @used-by self::url()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoint()
 	 */
 	protected function createIfNeeded() {
@@ -118,9 +118,8 @@ abstract class Png extends \Df\Core\O {
 	protected function fs() {return Fs::s();}
 
 	/**
-	 * 2015-12-08
-	 * Кэшировать результат нельзя!
-	 * @used-by \Df\GoogleFont\Fonts\Png::createIfNeeded()
+	 * 2015-12-08 Кэшировать результат нельзя!
+	 * @used-by self::createIfNeeded()
 	 * @see \Df\GoogleFont\Fonts\Sprite::needToCreate()
 	 * @return bool
 	 */
@@ -131,7 +130,7 @@ abstract class Png extends \Df\Core\O {
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Fonts\Png::create()
+	 * @used-by self::create()
 	 * @return resource
 	 */
 	private function image() {
@@ -142,9 +141,7 @@ abstract class Png extends \Df\Core\O {
 	}
 
 	/** @return string */
-	private function path() {return dfc($this, function() {return
-		$this->fs()->absolute($this->pathRelativeA())				
-	;});}
+	private function path() {return dfc($this, function() {return $this->fs()->absolute($this->pathRelativeA());});}
 
 	/** @var string */
 	protected static $P__PARAMS = 'params';
