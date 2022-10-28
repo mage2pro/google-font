@@ -19,18 +19,12 @@ final class Variant extends \Df\Core\O {
 
 	/**
 	 * 2015-11-29
-	 * @param Params|null $params [optional]
+	 * @param Params|null $p [optional]
 	 * @return Preview
 	 */
-	function preview(Params $params = null) {
-		if (!$params) {
-			$params = Params::fromRequest();
-		}
-		if (!isset($this->{__METHOD__}[$params->getId()])) {
-			$this->{__METHOD__}[$params->getId()] = Preview::i($this, $params);
-		}
-		return $this->{__METHOD__}[$params->getId()];
-	}
+	function preview(Params $p = null) {$p = $p ?: Params::fromRequest(); return dfc($this, function() use($p) {return
+		Preview::i($this, $p)
+	;}, [$p->getId()]);}
 
 	/**
 	 * 2015-11-30

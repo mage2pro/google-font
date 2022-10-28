@@ -1,7 +1,10 @@
 <?php
 namespace Df\GoogleFont\Fonts;
 use Df\GoogleFont\Font\Variant\Preview\Params;
-/** @see \Df\GoogleFont\Fonts\Sprite */
+/**
+ * @see \Df\GoogleFont\Font\Variant\Preview
+ * @see \Df\GoogleFont\Fonts\Sprite
+ */
 abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-08
@@ -31,14 +34,15 @@ abstract class Png extends \Df\Core\O {
 	 */
 	abstract protected function pathRelativeA();
 
-	/** @return string */
-	function contents() {
-		if (!isset($this->{__METHOD__})) {
-			$this->createIfNeeded();
-			$this->{__METHOD__} = file_get_contents($this->path());
-		}
-		return $this->{__METHOD__};
-	}
+	/**
+	 * @used-by \Df\GoogleFont\Controller\Index\Preview::contents()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
+	 * @return string
+	 */
+	function contents():string {return dfc($this, function() {
+		$this->createIfNeeded();
+		return file_get_contents($this->path());
+	});}
 
 	/**
 	 * 2015-12-01
@@ -57,25 +61,18 @@ abstract class Png extends \Df\Core\O {
 	 *
 	 * @return string
 	 */
-	function url() {
-		if (!isset($this->{__METHOD__})) {
-			try {
-				$this->createIfNeeded();
-				$this->{__METHOD__} = df_media_path2url($this->path());
-			}
-			catch (\Exception $e) {
-				df_log($e->getMessage());
-				$this->{__METHOD__} = '';
-			}
-		}
-		return $this->{__METHOD__};
-	}
+	function url() {return dfc($this, function() {return df_try(
+		function() {$this->createIfNeeded(); return df_media_path2url($this->path());}
+		,function(\Exception $e) {df_log($e->getMessage()); return '';}
+	);});}
 
 	/**
 	 * 2015-11-30
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
 	 * @return int|int[]
 	 */
-	protected function bgColor() {return $this->params()->bgColor();}
+	final protected function bgColor() {return $this->params()->bgColor();}
 
 	/**
 	 * @param resource $image
@@ -125,7 +122,10 @@ abstract class Png extends \Df\Core\O {
 	 */
 	protected function needToCreate() {return !file_exists($this->path());}
 
-	/** @return Params */
+	/**
+	 * @used-by self::draw()
+	 * @return Params
+	 */
 	protected function params() {return $this[self::$P__PARAMS];}
 
 	/**

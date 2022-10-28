@@ -49,12 +49,7 @@ class Exception extends \Df\Core\Exception {
 		}
 	 * @return array(string => string)
 	 */
-	private function firstError() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = df_first($this['errors']);
-		}
-		return $this->{__METHOD__};
-	}
+	private function firstError() {return df_first($this['errors']);}
 
 	/** @return string */
 	private function messageI() {return $this['message'];}

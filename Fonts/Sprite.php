@@ -63,25 +63,22 @@ final class Sprite extends Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @return int
 	 */
-	protected function height() {
-		if (!isset($this->{__METHOD__})) {
-			/**
-			 * 2015-12-10
-			 * Результат $this->square() / $this->width() может быть дробным (например: 3796.1538461538),
-			 * т.к. мы уже провели много замысловатых операций.
-			 * Поэтому для приведения результату к целому типу надло использоват именно @uses ceil(),
-			 * иначе последнему ряду спрайта не хватит места.
-			 *
-			 * Также надо учитывать, что последний ряд почти наверняка будет заполнен не полностью,
-			 * а наш алгоритм вычисления площади исходит из суммы площадей миниатюр,
-			 * т.е. считает, что последний ряд заполнен полностью.
-			 * Поэтому добавляем место для ещё одого ряда снизу,
-			 * чтобы последнему ряду уж наверняка хватило места.
-			 */
-			$this->{__METHOD__} = ceil($this->square() / $this->width()) + $this->previewHeight() + $this->marginY();
-		}
-		return $this->{__METHOD__};
-	}
+	protected function height() {return dfc($this, function() {return
+		/**
+		 * 2015-12-10
+		 * Результат $this->square() / $this->width() может быть дробным (например: 3796.1538461538),
+		 * т.к. мы уже провели много замысловатых операций.
+		 * Поэтому для приведения результату к целому типу надло использоват именно @uses ceil(),
+		 * иначе последнему ряду спрайта не хватит места.
+		 *
+		 * Также надо учитывать, что последний ряд почти наверняка будет заполнен не полностью,
+		 * а наш алгоритм вычисления площади исходит из суммы площадей миниатюр,
+		 * т.е. считает, что последний ряд заполнен полностью.
+		 * Поэтому добавляем место для ещё одого ряда снизу,
+		 * чтобы последнему ряду уж наверняка хватило места.
+		 */
+		ceil($this->square() / $this->width()) + $this->previewHeight() + $this->marginY()
+	;});}
 
 	/**
 	 * 2015-12-08 Кэшировать результат нельзя!
@@ -115,12 +112,7 @@ final class Sprite extends Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @return int
 	 */
-	protected function width() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = $this->numPreviewsInARow() * $this->previewWidth();
-		}
-		return $this->{__METHOD__};
-	}
+	protected function width() {return $this->numPreviewsInARow() * $this->previewWidth();}
 
 	/**
 	 * 2015-12-08
@@ -159,42 +151,26 @@ final class Sprite extends Png {
 	private function marginY() {return 4;}
 
 	/**
-	 * 2015-12-08
-	 * Количество картинок в одном горизонтальном ряду спрайта.
+	 * 2015-12-08 Количество картинок в одном горизонтальном ряду спрайта.
 	 * @return int
 	 */
-	private function numPreviewsInARow() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = ceil(sqrt($this->square()) / $this->previewWidth());
-		}
-		return $this->{__METHOD__};
-	}
+	private function numPreviewsInARow() {return ceil(sqrt($this->square()) / $this->previewWidth());}
 
 	/**
 	 * 2015-12-08
 	 * @return string
 	 */
-	private function pathRelativeBase() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = df_cc_path('sprite', df_fs_name(implode('_', [
-				$this->fs()->nameResolution(), $this->fs()->nameColorsSizeMargin()
-			])));
-		}
-		return $this->{__METHOD__};
-	}
+	private function pathRelativeBase() {return dfc($this, function() {return df_cc_path('sprite', df_fs_name(implode('_', [
+		$this->fs()->nameResolution(), $this->fs()->nameColorsSizeMargin()
+	])));});}
 
 	/**
 	 * 2015-12-08
 	 * @return string
 	 */
-	private function pathToDatumPoints() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = $this->fs()->absolute([
-				$this->pathRelativeBase(), 'datum-points.json'
-			]);
-		}
-		return $this->{__METHOD__};
-	}
+	private function pathToDatumPoints() {return dfc($this, function() {return $this->fs()->absolute([
+		$this->pathRelativeBase(), 'datum-points.json'
+	]);});}
 
 	/** @return int */
 	private function previewHeight() {return $this->params()->height();}
@@ -216,16 +192,12 @@ final class Sprite extends Png {
 	private function previewWidth() {return $this->params()->width();}
 
 	/**
-	 * 2015-12-08
-	 * Площадь спрайта: сумм площадей всех картинок спрайта.
+	 * 2015-12-08 Площадь спрайта: сумм площадей всех картинок спрайта.
 	 * @return int
 	 */
-	private function square() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = ($this->previewHeight() + $this->marginY()) * $this->previewWidth() * count($this->previews());
-		}
-		return $this->{__METHOD__};
-	}
+	private function square() {return dfc($this, function() {return
+		($this->previewHeight() + $this->marginY()) * $this->previewWidth() * count($this->previews())
+	;});}
 
 	/** @var string */
 	private static $P__FONTS = 'fonts';

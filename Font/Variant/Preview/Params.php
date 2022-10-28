@@ -1,24 +1,18 @@
 <?php
 namespace Df\GoogleFont\Font\Variant\Preview;
 final class Params  extends \Df\Core\O {
-	/** @return int[] */
-	function bgColor() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = $this->rgb($this->bgColorRaw());
-		}
-		return $this->{__METHOD__};
-	}
+	/**
+	 * @used-by self::getId()
+	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
+	 * @return int[]
+	 */
+	function bgColor() {return $this->rgb($this->bgColorRaw());}
 
 	/** @return string */
 	function bgColorRaw() {return $this[self::$P__BG_COLOR];}
 
 	/** @return int[] */
-	function fontColor() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = $this->rgb($this->fontColorRaw());
-		}
-		return $this->{__METHOD__};
-	}
+	function fontColor() {return $this->rgb($this->fontColorRaw());}
 
 	/** @return string */
 	function fontColorRaw() {return $this[self::$P__FONT_COLOR];}
@@ -57,6 +51,7 @@ final class Params  extends \Df\Core\O {
 	/**
 	 * Этот метод возвращает объект-одиночку,
 	 * потому что параметры запроса у нас неизменны в течение всей жизни запроса.
+	 * @used-by \Df\GoogleFont\Font\Variant::preview()
 	 * @return Params
 	 */
 	static function fromRequest() {
