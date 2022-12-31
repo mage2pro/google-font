@@ -48,6 +48,7 @@ final class Font extends \Df\Core\O {
 
 	/**
 	 * 2015-11-28 "variants": ["regular", "italic"]
+	 * @used-by self::variants()
 	 * @return string[]
 	 */
 	function variantNames() {return $this['variants'];}
