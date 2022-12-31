@@ -8,14 +8,11 @@ final class Variant extends \Df\Core\O {
 	/** @used-by \Df\GoogleFont\Font\Variant\Preview::folderFamily() */
 	function font():Font {return $this[self::$P__FONT];}
 
-	/**
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview::baseName()
-	 */
+	/** @used-by \Df\GoogleFont\Font\Variant\Preview::baseName() */
 	function name():string {return $this[self::$P__NAME];}
 
 	/**
 	 * 2015-11-29
-	 * @param Params|null $p [optional]
 	 * @return Preview
 	 */
 	function preview(Params $p = null) {$p = $p ?: Params::fromRequest(); return dfc($this, function() use($p) {return
