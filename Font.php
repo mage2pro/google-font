@@ -52,10 +52,8 @@ final class Font extends \Df\Core\O {
 	 */
 	function variants() {return dfc($this, function() {
 		# 2015-11-28 "variants": ["regular", "italic"]
-		$names = $this['variants']; /** @var string[] $names */
-		return array_combine(
-			$names, array_map(function(string $name):V {return V::i($this, $name, $this['files'][$name]);}, $names)
-		);
+		$nn = $this['variants']; /** @var string[] $nn */
+		return array_combine($nn, array_map(function(string $n):V {return V::i($this, $n, $this['files'][$n]);}, $nn));
 	});}
 
 	/**
