@@ -146,11 +146,10 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 
 	/** @return Variant */
 	private function variant() {return $this[self::$P__VARIANT];}
+
 	/**
 	 * 2015-11-29
 	 * @used-by \Df\GoogleFont\Font\Variant::preview()
-	 * @param Variant $variant
-	 * @param Params $params
 	 * @return Preview
 	 */
 	static function i(Variant $variant, Params $params) {return new self([
