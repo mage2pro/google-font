@@ -47,20 +47,16 @@ final class Font extends \Df\Core\O {
 	);}
 
 	/**
-	 * 2015-11-28 "variants": ["regular", "italic"]
-	 * @used-by self::variants()
-	 * @return string[]
-	 */
-	function variantNames() {return $this['variants'];}
-
-	/**
 	 * 2015-11-27
 	 * @return array(string => Variant)
 	 */
-	function variants() {return dfc($this, function() {return array_combine(
-		$this->variantNames()
-		,array_map(function($name) {return Variant::i($this, $name, $this['files'][$name]);}, $this->variantNames())
-	);});}
+	function variants() {return dfc($this, function() {
+		# 2015-11-28 "variants": ["regular", "italic"]
+		$names = $this['variants']; /** @var string[] $names */
+		return array_combine(
+			$names, array_map(function($name) {return Variant::i($this, $name, $this['files'][$name]);}, $names)
+		);
+	});}
 
 	/**
 	 * 2015-12-08
