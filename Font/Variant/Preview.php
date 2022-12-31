@@ -133,7 +133,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 
 	/**
 	 * 2015-12-10 Текст для отображения.
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by self::draw()
 	 * @return string
 	 */
 	private function text() {return dfc($this, function() {return df_desc($this->family(), $this->variant()->name());});}
