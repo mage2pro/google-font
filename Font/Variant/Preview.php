@@ -26,12 +26,12 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @override
 	 * @see \Df\GoogleFont\Fonts\Png::draw()
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
-	 * @param resource $image
+	 * @param resource $i
 	 */
-	protected function draw($image):void {
-		df_assert(imagefill($image, 0, 0, $this->colorAllocateAlpha($image, $this->bgColor())));
+	protected function draw($i):void {
+		df_assert(imagefill($i, 0, 0, $this->colorAllocateAlpha($i, $this->bgColor())));
 		df_assert(imagettftext(
-			$image
+			$i
 			,$this->fontSize()
 			,0
 			,$this->marginLeft()
@@ -45,7 +45,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 			,$this->height() - abs(
 				$this->box(1) # 2015-12-10 Нижняя координата Y отображаемого текста.
 			)
-			,$this->colorAllocateAlpha($image, $this->params()->fontColor())
+			,$this->colorAllocateAlpha($i, $this->params()->fontColor())
 			,$this->ttfPath()
 			,$this->text()
 		));
