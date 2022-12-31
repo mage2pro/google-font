@@ -42,12 +42,9 @@ final class Font extends \Df\Core\O {
 	 * 2015-11-29
 	 * @throws DFE
 	 */
-	function variant(string $n):Variant {/** @var Variant|null $r */
-		if (!($r = dfa($this->variants(), $n))) {
-			df_error("The variant «{$n}» of the font «{$this->family()}» has not been found.");
-		}
-		return $r;
-	}
+	function variant(string $n):Variant {return df_assert(dfa($this->variants(), $n),
+		"The variant «{$n}» of the font «{$this->family()}» has not been found."
+	);}
 
 	/**
 	 * 2015-11-28 "variants": ["regular", "italic"]
