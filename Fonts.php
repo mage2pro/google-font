@@ -8,9 +8,8 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	 * 2015-11-27
 	 * @override
 	 * @see \Countable::count()
-	 * @return int
 	 */
-	function count() {return count($this->items());}
+	function count():int {return count($this->items());}
 
 	/**
 	 * 2015-11-29
