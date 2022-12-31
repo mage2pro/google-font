@@ -122,9 +122,8 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by self::box()
 	 * @used-by self::getId()
 	 * @used-by self::text()
-	 * @return string
 	 */
-	private function family() {return $this->variant()->font()->family();}
+	private function family():string {return $this->variant()->font()->family();}
 
 	/** @return int */
 	private function fontSize() {return $this->params()->fontSize();}
