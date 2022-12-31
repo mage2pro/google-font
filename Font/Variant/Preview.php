@@ -34,7 +34,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 			$i
 			,$this->fontSize()
 			,0
-			,$this->marginLeft()
+			,$this->params()->marginLeft()
 			# 2015-12-10
 			# The y-ordinate.
 			# This sets the position of the fonts baseline, not the very bottom of the character.
@@ -130,9 +130,6 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by self::draw()
 	 */
 	private function fontSize():int {return $this->params()->fontSize();}
-
-	/** @return int */
-	private function marginLeft():int {return $this->params()->marginLeft();}
 
 	/**
 	 * 2015-12-10 Текст для отображения.

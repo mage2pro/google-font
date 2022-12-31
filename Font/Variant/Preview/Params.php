@@ -36,7 +36,10 @@ final class Params  extends \Df\Core\O {
 	/** @return int */
 	function height() {return $this[self::$P__HEIGHT];}
 
-	/** @return int */
+	/**
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
+	 * @return int
+	 */
 	function marginLeft() {return $this[self::$P__MARGIN_LEFT];}
 
 	/** @return int */
