@@ -13,11 +13,9 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 
 	/**
 	 * 2015-11-29
-	 * @param string $f
-	 * @return Font
 	 * @throws \Exception
 	 */
-	function get($f) {
+	function get(string $f):Font {
 		if (!($r = dfa($this->items(), $f))) { /** @var Font|null $r */
 			throw new \Exception("Font family is not found: «{$f}».");
 		}
