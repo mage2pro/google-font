@@ -68,7 +68,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::path()
 	 * @return string[]
 	 */
-	protected function pathRelativeA() {return [
+	protected function pathRelativeA():array {return [
 		'preview'
 		, df_fs_name($this->family())
 		, $this->fs()->nameResolution()
