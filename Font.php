@@ -50,6 +50,7 @@ final class Font extends \Df\Core\O {
 	/**
 	 * 2015-11-27
 	 * @used-by self::variant()
+	 * @used-by self::variantsAvailable()
 	 * @return array(string => V)
 	 */
 	function variants():array {return dfc($this, function():array {
