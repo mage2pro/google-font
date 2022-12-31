@@ -26,9 +26,8 @@ final class Variant extends \Df\Core\O {
 	/**
 	 * 2015-11-30
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview
-	 * @return string
 	 */
-	function ttfPath() {return dfc($this, function() {/** @var string $r */
+	function ttfPath():string {return dfc($this, function() {/** @var string $r */
 		$u = $this[self::$P__URL]; /** @var string $u */
 		if (!file_exists($r = Fs::s()->absolute(['ttf', basename($u)]))) {
 			df_file_write($r, df_contents($u));
