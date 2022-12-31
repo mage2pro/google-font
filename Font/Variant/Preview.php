@@ -135,9 +135,8 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * 2015-12-10 Текст для отображения.
 	 * @used-by self::box()
 	 * @used-by self::draw()
-	 * @return string
 	 */
-	private function text() {return df_desc($this->family(), $this->variant()->name());}
+	private function text():string {return df_desc($this->family(), $this->variant()->name());}
 
 	/** @return string */
 	private function ttfPath() {return $this->variant()->ttfPath();}
