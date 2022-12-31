@@ -39,10 +39,9 @@ final class Font extends \Df\Core\O {
 
 	/**
 	 * 2015-11-29
-	 * @return Variant
 	 * @throws \Exception
 	 */
-	function variant(string $n) {
+	function variant(string $n):Variant {
 		$r = dfa($this->variants(), $n); /** @var Variant|null $r */
 		if (!$r) {
 			throw new \Exception("Variant «{$n}» of font «{$this->family()}» is not found.");
