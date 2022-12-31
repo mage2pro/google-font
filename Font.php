@@ -54,7 +54,7 @@ final class Font extends \Df\Core\O {
 		# 2015-11-28 "variants": ["regular", "italic"]
 		$names = $this['variants']; /** @var string[] $names */
 		return array_combine(
-			$names, array_map(function(string $name) {return Variant::i($this, $name, $this['files'][$name]);}, $names)
+			$names, array_map(function(string $name):Variant {return Variant::i($this, $name, $this['files'][$name]);}, $names)
 		);
 	});}
 
