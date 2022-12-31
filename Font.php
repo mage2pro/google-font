@@ -40,6 +40,7 @@ final class Font extends \Df\Core\O {
 
 	/**
 	 * 2015-11-29
+	 * @used-by \Df\GoogleFont\Controller\Index\Preview::contents()
 	 * @throws DFE
 	 */
 	function variant(string $n):V {return df_assert(dfa($this->variants(), $n),
