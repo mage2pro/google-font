@@ -37,11 +37,9 @@ final class Variant extends \Df\Core\O {
 
 	/**
 	 * 2015-11-29
-	 * @param string $name
-	 * @param string $url
 	 * @return Variant
 	 */
-	static function i(Font $font, $name, $url) {return new self([
+	static function i(Font $font, string $name, string $url) {return new self([
 		self::$P__FONT => $font, self::$P__NAME => $name, self::$P__URL => $url
 	]);}
 
