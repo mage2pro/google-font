@@ -31,8 +31,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	 * @return array(string => Font)
 	 */
 	private function items() {return dfc($this, function() {
-		/** @var mixed $result */ /** @var Font[] $fonts */
-		$fonts = array_map(function(array $itemA) {return new Font($itemA);}, $this->responseA());
+		$fonts = array_map(function(array $itemA) {return new Font($itemA);}, $this->responseA()); /** @var Font[] $fonts */
 		$families = array_map(function(Font $font) {return $font->family();}, $fonts); /** @var string[] $families */
 		return array_combine($families, $fonts);
 	});}
