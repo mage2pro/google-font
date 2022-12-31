@@ -29,24 +29,16 @@ final class Exception extends \Df\Core\Exception {
 	 */
 	function message():string {
 		$ra[]= "Google Fonts API error: «{$this['message']}»."; /** @var string[] $ra */
-		if ('accessNotConfigured' === $this->reason()) {
+		# 2015-11-28
+		#	{
+		#		domain: "usageLimits",
+		#		reason: "accessNotConfigured",
+		#		message: "Access Not Configured. The API (Google Fonts Developer API) is not enabled for your project. Please use the Google Developers Console to update your configuration.",
+		#		extendedHelp: "https://console.developers.google.com"
+		#	}
+		if ('accessNotConfigured' === dfa(df_first($this['errors']), 'reason')) {
 			$ra[] = 'You need to setup Google Fonts API using the instruction https://mage2.pro/t/269';
 		}
 		return df_cc_n($ra);
 	}
-
-	/**
-	 * 2015-11-28
-		{
-			domain: "usageLimits",
-			reason: "accessNotConfigured",
-			message: "Access Not Configured. The API (Google Fonts Developer API) is not enabled for your project. Please use the Google Developers Console to update your configuration.",
-			extendedHelp: "https://console.developers.google.com"
-		}
-	 * @return array(string => string)
-	 */
-	private function firstError() {return df_first($this['errors']);}
-
-	/** @return string */
-	private function reason() {return dfa($this->firstError(), 'reason');}
 }
