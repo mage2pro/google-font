@@ -31,6 +31,7 @@ use Df\GoogleFont\Font\Variant;
 final class Font extends \Df\Core\O {
 	/**
 	 * 2015-11-28 "family": "ABeeZee"
+	 * @used-by self::variant()
 	 */
 	function family():string {return $this['family'];}
 
