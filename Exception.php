@@ -28,8 +28,7 @@ final class Exception extends \Df\Core\Exception {
 	 * @used-by df_xts()
 	 */
 	function message():string {
-		/** @var string[] $resultA */
-		$resultA[]= "Google Fonts API error: «{$this->messageI()}».";
+		$resultA[]= "Google Fonts API error: «{$this->messageI()}»."; /** @var string[] $resultA */
 		if ($this->isAccessNotConfigured()) {
 			$resultA[] = 'You need to setup Google Fonts API using the instruction https://mage2.pro/t/269';
 		}
