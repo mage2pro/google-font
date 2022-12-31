@@ -61,6 +61,6 @@ final class Font extends \Df\Core\O {
 	 * @return array(string => V)
 	 */
 	function variantsAvailable() {return dfc($this, function() {return array_filter(
-		$this->variants(), function(V $v) {return $v->preview()->isAvailable();}
+		$this->variants(), function(V $v):bool {return $v->preview()->isAvailable();}
 	);});}
 }
