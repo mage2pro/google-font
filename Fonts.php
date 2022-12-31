@@ -46,7 +46,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	 * @return array(string => mixed)
 	 * @throws \Exception
 	 */
-	private function responseA():array {return dfc($this, function() {
+	private function responseA():array {return dfc($this, function():array {
 		$debug = true; /** @var bool $debug */ /** @var string $k */
 		list($url, $query) = $debug || !($k = S::s()->serverApiKey())
 			? ['https://mage2.pro/google-fonts.json', []]
