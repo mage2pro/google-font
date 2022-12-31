@@ -70,9 +70,9 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 */
 	protected function pathRelativeA():array {return [
 		'preview'
-		, df_fs_name($this->family())
-		, $this->fs()->nameResolution()
-		, $this->fs()->namePng([$this->variant()->name(), $this->fs()->nameColorsSizeMargin()])
+		,df_fs_name($this->family())
+		,$this->fs()->nameResolution()
+		,$this->fs()->namePng([$this->variant()->name(), $this->fs()->nameColorsSizeMargin()])
 	];}
 
 	/**
