@@ -1,7 +1,7 @@
 <?php
 namespace Df\GoogleFont;
 use Df\Core\Exception as DFE;
-use Df\GoogleFont\Font\Variant;
+use Df\GoogleFont\Font\Variant as V;
 /**
  * 2015-11-27
  * https://developers.google.com/fonts/docs/developer_api#Example
@@ -42,7 +42,7 @@ final class Font extends \Df\Core\O {
 	 * 2015-11-29
 	 * @throws DFE
 	 */
-	function variant(string $n):Variant {return df_assert(dfa($this->variants(), $n),
+	function variant(string $n):V {return df_assert(dfa($this->variants(), $n),
 		"The variant «{$n}» of the font «{$this->family()}» has not been found."
 	);}
 
@@ -54,7 +54,7 @@ final class Font extends \Df\Core\O {
 		# 2015-11-28 "variants": ["regular", "italic"]
 		$names = $this['variants']; /** @var string[] $names */
 		return array_combine(
-			$names, array_map(function(string $name):Variant {return Variant::i($this, $name, $this['files'][$name]);}, $names)
+			$names, array_map(function(string $name):V {return V::i($this, $name, $this['files'][$name]);}, $names)
 		);
 	});}
 
@@ -63,7 +63,7 @@ final class Font extends \Df\Core\O {
 	 * @return array(string => Variant)
 	 */
 	function variantsAvailable() {return dfc($this, function() {return array_filter(
-		$this->variants(), function(Variant $variant) {return
+		$this->variants(), function(V $variant) {return
 			$variant->preview()->isAvailable()
 		;}
 	);});}
