@@ -14,6 +14,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 
 	/**
 	 * 2015-11-29
+	 * @used-by \Df\GoogleFont\Controller\Index\Preview::contents()
 	 * @throws DFE
 	 */
 	function get(string $f):Font {return df_assert(dfa($this->items(), $f), "Font family is not found: «{$f}».");}
