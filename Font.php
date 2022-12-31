@@ -33,6 +33,7 @@ final class Font extends \Df\Core\O {
 	 * 2015-11-28 "family": "ABeeZee"
 	 * @used-by self::variant()
 	 * @used-by \Df\GoogleFont\Fonts::items()
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::family()
 	 */
 	function family():string {return $this['family'];}
 
