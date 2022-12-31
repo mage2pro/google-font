@@ -106,9 +106,9 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by self::draw()
 	 * @throws \Exception
 	 */
-	private function box(int $index):int {return df_try(
-		function() {return df_assert_nef(imagettfbbox($this->fontSize(), 0, $this->ttfPath(), $this->text()));}
-		,function(\Exception $e) {
+	private function box(int $i):int {return df_try(
+		function() use($i):int {return df_assert_nef(imagettfbbox($this->fontSize(), 0, $this->ttfPath(), $this->text()))[$i];}
+		,function(\Exception $e):void {
 			throw new \Exception(
 				'Unable to load the TTF file for the font'
 				." «{$this->family()} ({$this->variant()->name()})»: «{$this->ttfPath()}»."
