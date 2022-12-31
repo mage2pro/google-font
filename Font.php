@@ -44,7 +44,7 @@ final class Font extends \Df\Core\O {
 	 */
 	function variant(string $n):Variant {/** @var Variant|null $r */
 		if (!($r = dfa($this->variants(), $n))) {
-			df_error("Variant «{$n}» of font «{$this->family()}» is not found.");
+			df_error("The variant «{$n}» of the font «{$this->family()}» has not been found.");
 		}
 		return $r;
 	}
