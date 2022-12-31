@@ -25,7 +25,7 @@ final class Variant extends \Df\Core\O {
 
 	/**
 	 * 2015-11-30
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::ttfPath()
 	 */
 	function ttfPath():string {return dfc($this, function():string {/** @var string $r */
 		$u = $this[self::$P__URL]; /** @var string $u */
