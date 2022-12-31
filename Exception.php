@@ -28,7 +28,7 @@ final class Exception extends \Df\Core\Exception {
 	 * @used-by df_xts()
 	 */
 	function message():string {
-		$ra[]= "Google Fonts API error: «{$this->messageI()}»."; /** @var string[] $ra */
+		$ra[]= "Google Fonts API error: «{$this['message']}»."; /** @var string[] $ra */
 		if ('accessNotConfigured' === $this->reason()) {
 			$ra[] = 'You need to setup Google Fonts API using the instruction https://mage2.pro/t/269';
 		}
@@ -46,9 +46,6 @@ final class Exception extends \Df\Core\Exception {
 	 * @return array(string => string)
 	 */
 	private function firstError() {return df_first($this['errors']);}
-
-	/** @return string */
-	private function messageI() {return $this['message'];}
 
 	/** @return string */
 	private function reason() {return dfa($this->firstError(), 'reason');}
