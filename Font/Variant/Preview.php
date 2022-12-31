@@ -104,10 +104,9 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * это значит, что самая верхняя точка текста расположена на 16 пикселей выше baseline.
 	 * 5) Почему левая координата X получилась отрицательной? Видимо, из-за левой засечки первой буквы текста «A».
 	 * @used-by self::draw()
-	 * @param int $index
 	 * @throws \Exception
 	 */
-	private function box($index):int {return dfc($this, function() {return df_try(
+	private function box(int $index):int {return dfc($this, function() {return df_try(
 		function() {return df_assert_nef(imagettfbbox($this->fontSize(), 0, $this->ttfPath(), $this->text()));}
 		,function(\Exception $e) {
 			throw new \Exception(
