@@ -13,6 +13,10 @@ final class Variant extends \Df\Core\O {
 
 	/**
 	 * 2015-11-29
+     * @used-by \Df\GoogleFont\Controller\Index\Index::execute()
+     * @used-by \Df\GoogleFont\Controller\Index\Preview::contents()
+     * @used-by \Df\GoogleFont\Font::variantsAvailable()
+     * @used-by \Df\GoogleFont\Fonts\Sprite::previews()
 	 */
 	function preview(Params $p = null):Preview {
         $p = $p ?: Params::fromRequest();
