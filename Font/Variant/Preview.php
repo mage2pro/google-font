@@ -126,7 +126,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	private function family():string {return $this->variant()->font()->family();}
 
 	/** @return int */
-	private function fontSize() {return $this->params()->fontSize();}
+	private function fontSize():int {return $this->params()->fontSize();}
 
 	/** @return int */
 	private function marginLeft() {return $this->params()->marginLeft();}
