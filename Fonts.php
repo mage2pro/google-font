@@ -28,6 +28,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 
 	/**
 	 * 2015-11-27
+	 * @used-by self::count()
 	 * @return array(string => Font)
 	 */
 	private function items():array {return dfc($this, function():array {
