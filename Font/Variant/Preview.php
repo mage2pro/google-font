@@ -149,6 +149,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by self::family()
 	 * @used-by self::getId()
 	 * @used-by self::pathRelativeA()
+	 * @used-by self::text()
 	 */
 	private function variant():Variant {return $this[self::$P__VARIANT];}
 
@@ -160,6 +161,10 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 		self::$P__VARIANT => $variant, self::$P__PARAMS => $params
 	]);}
 
-	/** @var string */
+	/**
+	 * @used-by self::i()
+	 * @used-by self::variant()
+	 * @var string
+	 */
 	private static $P__VARIANT = 'variant';
 }
