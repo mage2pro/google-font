@@ -5,10 +5,9 @@ use Df\GoogleFont\Font\Variant\Preview\Params;
 final class Preview extends \Df\GoogleFont\Fonts\Png {
 	/**
 	 * 2015-12-08
-	 * Стандартный способ генерации идентификатора нас не устраивает,
-	 * потому что он создаёт идентификатор случайным образом,
-	 * а нам нужно, чтобы идентификатор был одним и тем же
-	 * для двух любых запросов к серверу (чтобы сопоставлять preview и datumPoints).
+	 * Стандартный способ генерации идентификатора нас не устраивает, потому что он создаёт идентификатор случайным образом,
+	 * а нам нужно, чтобы идентификатор был одним и тем же для двух любых запросов к серверу
+	 * (чтобы сопоставлять preview и datumPoints).
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoint()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
 	 * @return string|int
