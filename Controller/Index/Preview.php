@@ -14,13 +14,10 @@ class Preview extends \Df\Framework\App\Action\Image {
 	 * @override
 	 * @see \Df\Framework\App\Action\Image::contents()
 	 * @used-by \Df\Framework\App\Action\Image::execute()
-	 * @return string
 	 */
-	final protected function contents() {/** @var string[] $familyA */ return
+	final protected function contents():string {/** @var string[] $familyA */ return
 		_Fonts::s()->get(df_first($familyA = explode(':', df_request('family'))))
-			->variant(
-				dfa($familyA, 1, 'regular') # 2015-11-29  E.g.: "regular", "italic", "700", "700italic"
-			)
+			->variant(dfa($familyA, 1, 'regular')) # 2015-11-29  E.g.: "regular", "italic", "700", "700italic"
 			->preview()->contents()
 	;}
 
@@ -29,7 +26,6 @@ class Preview extends \Df\Framework\App\Action\Image {
 	 * @override
 	 * @see \Df\Framework\App\Action\Image::type()
 	 * @used-by \Df\Framework\App\Action\Image::execute()
-	 * @return string
 	 */
-	final protected function type() {return 'png';}
+	final protected function type():string {return 'png';}
 }

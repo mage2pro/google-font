@@ -34,7 +34,7 @@ final class Variant extends \Df\Core\O {
 	function ttfPath() {return dfc($this, function() {/** @var string $r */
 		$u = $this[self::$P__URL]; /** @var string $u */
 		if (!file_exists($r = Fs::s()->absolute(['ttf', basename($u)]))) {
-			df_file_write($r, file_get_contents($u));
+			df_file_write($r, df_contents($u));
 		}
 		return $r;
 	});}

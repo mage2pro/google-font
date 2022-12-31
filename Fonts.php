@@ -47,18 +47,17 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 
 	/**
 	 * 2015-11-27
+	 * 2022-12-05: We do not need to check that the result is an array: https://3v4l.org/pBUvg
 	 * @return array(string => mixed)
 	 * @throws \Exception
 	 */
-	private function responseA() {return dfc($this, function() {
-		$debug = true; /** @var bool $debug */
-		$result = df_json_decode(
-			$debug || !S::s()->serverApiKey()
-			? df_http_get('https://mage2.pro/google-fonts.json')
-			: df_http_get('https://www.googleapis.com/webfonts/v1/webfonts', [
-				'key' => S::s()->serverApiKey(), 'sort' => 'alpha'
-			])
-		); /** @var array(string => mixed) $result */
+	private function responseA():array {return dfc($this, function() {
+		$debug = true; /** @var bool $debug */ /** @var string $k */
+		list($url, $query) = $debug || !($k = S::s()->serverApiKey())
+			? ['https://mage2.pro/google-fonts.json', []]
+			: ['https://www.googleapis.com/webfonts/v1/webfonts', ['key' => $k, 'sort' => 'alpha']]
+		;
+		$r = df_http_json($url, $query); /** @var array(string => mixed) $r */
 		/**
 		 * 2015-11-17
 		 * В документации об этом ни слова не сказано,
@@ -79,10 +78,9 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 		 *	}
 		 * https://developers.google.com/fonts/docs/developer_api
 		 */
-		if ($error = dfa($result, 'error')) { /** @var array(string => mixed)|null $error */
+		if ($error = dfa($r, 'error')) { /** @var array(string => mixed)|null $error */
 			throw (new Exception($error))->standard();
 		}
-		# 2015-11-27 https://developers.google.com/fonts/docs/developer_api#Example
-		return df_result_array(dfa($result, 'items'));
+		return dfa($r, 'items'); # 2015-11-27 https://developers.google.com/fonts/docs/developer_api#Example
 	});}
 }

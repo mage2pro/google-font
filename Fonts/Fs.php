@@ -49,7 +49,7 @@ class Fs {
 
 	/**
 	 * 2017-03-15
-	 * @return self
+	 * @used-by \Df\GoogleFont\Font\Variant::ttfPath()
 	 */
-	static function s() {static $r; return $r ? $r : $r = new self;}
+	static function s():self {static $r; return $r ? $r : $r = new self;}
 }

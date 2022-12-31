@@ -41,7 +41,7 @@ abstract class Png extends \Df\Core\O {
 	 */
 	function contents():string {return dfc($this, function() {
 		$this->createIfNeeded();
-		return file_get_contents($this->path());
+		return df_contents($this->path());
 	});}
 
 	/**

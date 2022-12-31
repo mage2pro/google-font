@@ -20,14 +20,14 @@ namespace Df\GoogleFont;
 	}
  * https://developers.google.com/fonts/docs/developer_api
  */
-class Exception extends \Df\Core\Exception {
+final class Exception extends \Df\Core\Exception {
 	/**
 	 * 2015-11-27
 	 * @override
 	 * @see \Df\Core\Exception::message()
-	 * @return string
+	 * @used-by df_xts()
 	 */
-	function message() {
+	function message():string {
 		/** @var string[] $resultA */
 		$resultA[]= "Google Fonts API error: «{$this->messageI()}».";
 		if ($this->isAccessNotConfigured()) {

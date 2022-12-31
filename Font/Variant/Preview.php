@@ -41,7 +41,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 			 * 2015-12-10
 			 * The y-ordinate.
 			 * This sets the position of the fonts baseline, not the very bottom of the character.
-			 * http://php.net/manual/function.imagettftext.php
+			 * https://php.net/manual/function.imagettftext.php
 			 * Если мы хотим, чтобы нижняя часть текста была прилеплена к нижней части холста,
 			 * надо указать здесь высоту холста
 			 * минус то расстояние, на которое текст опускается ниже своей baseline.
@@ -93,7 +93,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 
 	/**
 	 * 2015-12-10
-	 * http://php.net/manual/function.imagettfbbox.php
+	 * https://php.net/manual/function.imagettfbbox.php
 	 *
 	 * Пример $box для шрифта «ABeeZee (regular)»:
 	 * [-1, 4, 159, 4, 159 -16, -1, -16]
