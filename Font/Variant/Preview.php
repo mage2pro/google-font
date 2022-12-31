@@ -150,9 +150,8 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	/**
 	 * 2015-11-29
 	 * @used-by \Df\GoogleFont\Font\Variant::preview()
-	 * @return Preview
 	 */
-	static function i(Variant $variant, Params $params) {return new self([
+	static function i(Variant $variant, Params $params):Preview {return new self([
 		self::$P__VARIANT => $variant, self::$P__PARAMS => $params
 	]);}
 
