@@ -44,7 +44,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	 * 2015-11-27
 	 * 2022-12-05: We do not need to check that the result is an array: https://3v4l.org/pBUvg
 	 * @return array(string => mixed)
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	private function responseA():array {return dfc($this, function():array {
 		$debug = true; /** @var bool $debug */ /** @var string $k */
