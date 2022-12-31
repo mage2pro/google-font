@@ -37,7 +37,6 @@ final class Variant extends \Df\Core\O {
 
 	/**
 	 * 2015-11-29
-	 * @param Font $font
 	 * @param string $name
 	 * @param string $url
 	 * @return Variant
