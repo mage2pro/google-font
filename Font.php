@@ -1,5 +1,6 @@
 <?php
 namespace Df\GoogleFont;
+use Df\Core\Exception as DFE;
 use Df\GoogleFont\Font\Variant;
 /**
  * 2015-11-27
@@ -39,11 +40,11 @@ final class Font extends \Df\Core\O {
 
 	/**
 	 * 2015-11-29
-	 * @throws \Exception
+	 * @throws DFE
 	 */
 	function variant(string $n):Variant {/** @var Variant|null $r */
 		if (!($r = dfa($this->variants(), $n))) {
-			throw new \Exception("Variant «{$n}» of font «{$this->family()}» is not found.");
+			df_error("Variant «{$n}» of font «{$this->family()}» is not found.");
 		}
 		return $r;
 	}
