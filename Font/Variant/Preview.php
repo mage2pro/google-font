@@ -146,6 +146,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 
 	/**
 	 * @used-by self::getId()
+	 * @used-by self::pathRelativeA()
 	 */
 	private function variant():Variant {return $this[self::$P__VARIANT];}
 
