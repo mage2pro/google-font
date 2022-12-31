@@ -44,10 +44,9 @@ class Index extends \Magento\Framework\App\Action\Action {
 
 	/**
 	 * 2015-12-08
-	 * @used-by execute()
-	 * @return Sprite
+	 * @used-by self::execute()
 	 */
-	private function sprite() {return dfc($this, function() {return Sprite::i(
+	private function sprite():Sprite {return dfc($this, function():Sprite {return Sprite::i(
 		_Fonts::s(), Params::fromRequest()
 	);});}
 }
