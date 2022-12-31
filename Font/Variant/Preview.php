@@ -58,9 +58,8 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::height()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
-	 * @return int
 	 */
-	protected function height() {return $this->params()->height();}
+	protected function height():int {return $this->params()->height();}
 
 	/**
 	 * 2015-12-08
