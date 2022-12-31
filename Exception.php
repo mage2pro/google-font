@@ -28,7 +28,7 @@ final class Exception extends \Df\Core\Exception {
 	 * @used-by df_xts()
 	 */
 	function message():string {
-		$ra[]= "Google Fonts API error: «{$this['message']}»."; /** @var string[] $ra */
+		$ra= ["Google Fonts API error: «{$this['message']}»."]; /** @var string[] $ra */
 		# 2015-11-28
 		#	{
 		#		domain: "usageLimits",
