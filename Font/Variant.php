@@ -10,9 +10,8 @@ final class Variant extends \Df\Core\O {
 
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::baseName()
-	 * @return string
 	 */
-	function name() {return $this[self::$P__NAME];}
+	function name():string {return $this[self::$P__NAME];}
 
 	/**
 	 * 2015-11-29
