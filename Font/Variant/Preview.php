@@ -139,7 +139,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	private function text():string {return df_desc($this->family(), $this->variant()->name());}
 
 	/** @return string */
-	private function ttfPath() {return $this->variant()->ttfPath();}
+	private function ttfPath():string {return $this->variant()->ttfPath();}
 
 	/** @return Variant */
 	private function variant() {return $this[self::$P__VARIANT];}
