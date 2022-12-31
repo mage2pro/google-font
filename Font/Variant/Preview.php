@@ -82,9 +82,8 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::width()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
-	 * @return int
 	 */
-	protected function width() {return $this->params()->width();}
+	protected function width():int {return $this->params()->width();}
 
 	/**
 	 * 2015-12-10
