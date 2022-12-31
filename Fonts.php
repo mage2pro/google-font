@@ -43,6 +43,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	/**
 	 * 2015-11-27
 	 * 2022-12-05: We do not need to check that the result is an array: https://3v4l.org/pBUvg
+	 * @used-by self::items()
 	 * @return array(string => mixed)
 	 * @throws Exception
 	 */
