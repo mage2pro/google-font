@@ -132,7 +132,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	private function fontSize():int {return $this->params()->fontSize();}
 
 	/** @return int */
-	private function marginLeft() {return $this->params()->marginLeft();}
+	private function marginLeft():int {return $this->params()->marginLeft();}
 
 	/**
 	 * 2015-12-10 Текст для отображения.
