@@ -23,9 +23,8 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	 * 2015-11-27 https://www.php.net/manual/iteratoraggregate.getiterator.php
 	 * @override
 	 * @see \IteratorAggregate::getIterator()
-	 * @return AI
 	 */
-	function getIterator() {return new AI($this->items());}
+	function getIterator():AI {return new AI($this->items());}
 
 	/**
 	 * 2015-11-27
