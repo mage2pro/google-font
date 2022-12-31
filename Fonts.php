@@ -20,10 +20,9 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	function get(string $f):Font {return df_assert(dfa($this->items(), $f), "Font family is not found: «{$f}».");}
 
 	/**
-	 * 2015-11-27
+	 * 2015-11-27 https://www.php.net/manual/iteratoraggregate.getiterator.php
 	 * @override
 	 * @see \IteratorAggregate::getIterator()
-	 * https://www.php.net/manual/iteratoraggregate.getiterator.php
 	 * @return AI
 	 */
 	function getIterator() {return new AI($this->items());}
