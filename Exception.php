@@ -29,14 +29,11 @@ final class Exception extends \Df\Core\Exception {
 	 */
 	function message():string {
 		$resultA[]= "Google Fonts API error: «{$this->messageI()}»."; /** @var string[] $resultA */
-		if ($this->isAccessNotConfigured()) {
+		if ('accessNotConfigured' === $this->reason()) {
 			$resultA[] = 'You need to setup Google Fonts API using the instruction https://mage2.pro/t/269';
 		}
 		return df_cc_n($resultA);
 	}
-
-	/** @return bool */
-	private function isAccessNotConfigured() {return 'accessNotConfigured' === $this->reason();}
 
 	/**
 	 * 2015-11-28
