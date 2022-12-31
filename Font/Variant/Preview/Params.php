@@ -38,6 +38,7 @@ final class Params  extends \Df\Core\O {
 
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
 	 */
 	function marginLeft():int {return $this[self::$P__MARGIN_LEFT];}
 
