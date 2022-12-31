@@ -10,7 +10,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * (чтобы сопоставлять preview и datumPoints).
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoint()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
-	 * @return string|int
+	 * @return string
 	 */
 	function getId() {return dfc($this, function() {return implode(':', [$this->family(), $this->variant()->name()]);});}
 
