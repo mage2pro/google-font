@@ -7,9 +7,8 @@ use Df\GoogleFont\Fonts\Fs;
 final class Variant extends \Df\Core\O {
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::folderFamily()
-	 * @return Font
 	 */
-	function font() {return $this[self::$P__FONT];}
+	function font():Font {return $this[self::$P__FONT];}
 
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::baseName()
