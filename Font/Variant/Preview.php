@@ -28,7 +28,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @param resource $image
 	 */
-	protected function draw($image) {
+	protected function draw($image):void {
 		df_assert(imagefill($image, 0, 0, $this->colorAllocateAlpha($image, $this->bgColor())));
 		df_assert(imagettftext(
 			$image
