@@ -35,15 +35,13 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 			,$this->fontSize()
 			,0
 			,$this->marginLeft()
-			/**
-			 * 2015-12-10
-			 * The y-ordinate.
-			 * This sets the position of the fonts baseline, not the very bottom of the character.
-			 * https://php.net/manual/function.imagettftext.php
-			 * Если мы хотим, чтобы нижняя часть текста была прилеплена к нижней части холста,
-			 * надо указать здесь высоту холста
-			 * минус то расстояние, на которое текст опускается ниже своей baseline.
-			 */
+			# 2015-12-10
+			# The y-ordinate.
+			# This sets the position of the fonts baseline, not the very bottom of the character.
+			# https://php.net/manual/function.imagettftext.php
+			# Если мы хотим, чтобы нижняя часть текста была прилеплена к нижней части холста,
+			# надо указать здесь высоту холста
+			# минус то расстояние, на которое текст опускается ниже своей baseline.
 			,$this->height() - abs(
 				$this->box(1) # 2015-12-10 Нижняя координата Y отображаемого текста.
 			)
