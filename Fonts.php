@@ -1,6 +1,7 @@
 <?php
 namespace Df\GoogleFont;
 use ArrayIterator as AI;
+use Df\Core\Exception as DFE;
 use Df\Google\Settings as S;
 /** @method static Fonts s() */
 final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
@@ -13,7 +14,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 
 	/**
 	 * 2015-11-29
-	 * @throws \Exception
+	 * @throws DFE
 	 */
 	function get(string $f):Font {return df_assert(dfa($this->items(), $f), "Font family is not found: «{$f}».");}
 
