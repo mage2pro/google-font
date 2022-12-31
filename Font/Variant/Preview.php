@@ -106,7 +106,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * @used-by self::draw()
 	 * @throws \Exception
 	 */
-	private function box(int $index):int {return dfc($this, function():int {return df_try(
+	private function box(int $index):int {return df_try(
 		function() {return df_assert_nef(imagettfbbox($this->fontSize(), 0, $this->ttfPath(), $this->text()));}
 		,function(\Exception $e) {
 			throw new \Exception(
@@ -116,7 +116,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 				, 0, $e
 			);
 		}
-	);})[$index];}
+	);}
 
 	/**
 	 * @used-by self::box()
