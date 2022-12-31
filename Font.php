@@ -48,7 +48,7 @@ final class Font extends \Df\Core\O {
 
 	/**
 	 * 2015-11-27
-	 * @return array(string => Variant)
+	 * @return array(string => V)
 	 */
 	function variants() {return dfc($this, function() {
 		# 2015-11-28 "variants": ["regular", "italic"]
@@ -58,7 +58,7 @@ final class Font extends \Df\Core\O {
 
 	/**
 	 * 2015-12-08
-	 * @return array(string => Variant)
+	 * @return array(string => V)
 	 */
 	function variantsAvailable() {return dfc($this, function() {return array_filter(
 		$this->variants(), function(V $variant) {return
