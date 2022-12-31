@@ -145,6 +145,8 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	private function ttfPath():string {return $this->variant()->ttfPath();}
 
 	/**
+	 * @used-by self::box()
+	 * @used-by self::family()
 	 * @used-by self::getId()
 	 * @used-by self::pathRelativeA()
 	 */
