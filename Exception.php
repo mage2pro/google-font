@@ -27,8 +27,7 @@ final class Exception extends \Df\Core\Exception {
 	 * @see \Df\Core\Exception::message()
 	 * @used-by df_xts()
 	 */
-	function message():string {
-		$ra= ["Google Fonts API error: «{$this['message']}»."]; /** @var string[] $ra */
+	function message():string {return df_cc_n("Google Fonts API error: «{$this['message']}».",
 		# 2015-11-28
 		#	{
 		#		domain: "usageLimits",
@@ -36,9 +35,7 @@ final class Exception extends \Df\Core\Exception {
 		#		message: "Access Not Configured. The API (Google Fonts Developer API) is not enabled for your project. Please use the Google Developers Console to update your configuration.",
 		#		extendedHelp: "https://console.developers.google.com"
 		#	}
-		if ('accessNotConfigured' === dfa(df_first($this['errors']), 'reason')) {
-			$ra[] = 'You need to setup Google Fonts API using the instruction https://mage2.pro/t/269';
-		}
-		return df_cc_n($ra);
-	}
+		'accessNotConfigured' !== dfa(df_first($this['errors']), 'reason') ? '' :
+			"You need to setup the Google Fonts' API using the instruction https://mage2.pro/t/269"
+	);}
 }
