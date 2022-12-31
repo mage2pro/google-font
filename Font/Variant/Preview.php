@@ -133,6 +133,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 
 	/**
 	 * 2015-12-10 Текст для отображения.
+	 * @used-by self::box()
 	 * @used-by self::draw()
 	 * @return string
 	 */
