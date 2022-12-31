@@ -14,9 +14,10 @@ final class Variant extends \Df\Core\O {
 	/**
 	 * 2015-11-29
 	 */
-	function preview(Params $p = null):Preview {$p = $p ?: Params::fromRequest(); return dfc($this, function() use($p) {return
-		Preview::i($this, $p)
-	;}, [$p->getId()]);}
+	function preview(Params $p = null):Preview {
+        $p = $p ?: Params::fromRequest();
+        return dfc($this, function() use($p):Preview {return Preview::i($this, $p);}, [$p->getId()]);
+    }
 
 	/**
 	 * 2015-11-30
