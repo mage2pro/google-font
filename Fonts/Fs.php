@@ -28,9 +28,9 @@ class Fs {
 
 	/**
 	 * 2015-12-08
-	 * @param string[] $params
+	 * @param string[] $p
 	 */
-	function namePng(array $params):string {return df_fs_name(implode('_', $params)) . '.png';}
+	function namePng(array $p):string {return df_fs_name(implode('_', $p)) . '.png';}
 
 	/**
 	 * 2015-12-08
