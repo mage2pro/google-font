@@ -6,6 +6,8 @@ class Fs {
 	/**
 	 * 2015-12-08
 	 * @used-by \Df\GoogleFont\Font\Variant::ttfPath()
+	 * @used-by \Df\GoogleFont\Fonts\Png::path()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathToDatumPoints()
 	 * @param string[] $relativeParts
 	 */
 	function absolute(array $relativeParts):string {return $this->baseAbsolute() . df_cc_path($relativeParts);}
