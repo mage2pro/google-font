@@ -26,9 +26,8 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-08
 	 * @used-by self::image()
-	 * @return int
 	 */
-	abstract protected function width();
+	abstract protected function width():int;
 
 	/**
 	 * 2015-12-08
