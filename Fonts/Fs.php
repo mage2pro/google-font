@@ -36,9 +36,8 @@ class Fs {
 
 	/**
 	 * 2015-12-08
-	 * @return string
 	 */
-	function nameResolution() {return dfc($this, function() {$p = $this->params(); return
+	function nameResolution():string {return dfc($this, function() {$p = $this->params(); return
 		implode('x', [$p->width(), $p->height()])
 	;});}
 
