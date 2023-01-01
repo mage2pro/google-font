@@ -17,7 +17,7 @@ class Fs {
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::pathRelativeA()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathRelativeBase()
 	 */
-	function nameColorsSizeMargin():string {return dfc($this, function():string {$p = $this->params(); return
+	function nameColorsSizeMargin():string {return dfc($this, function():string {$p = $this->p(); return
 		implode('_', [
 			's' . df_pad0(2, $p->fontSize())
 			,'f' . implode('-', $p->fontColor())
@@ -39,10 +39,10 @@ class Fs {
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::pathRelativeA()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathRelativeBase()
 	 */
-	function nameResolution():string {$p = $this->params(); return implode('x', [$p->width(), $p->height()]);}
+	function nameResolution():string {$p = $this->p(); return implode('x', [$p->width(), $p->height()]);}
 
 	/** @return Params */
-	private function params() {return Params::fromRequest();}
+	private function p() {return Params::fromRequest();}
 
 	/**
 	 * 2017-03-15
