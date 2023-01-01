@@ -10,7 +10,9 @@ class Fs {
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathToDatumPoints()
 	 * @param string[] $relativeParts
 	 */
-	function absolute(array $relativeParts):string {return $this->baseAbsolute() . df_cc_path($relativeParts);}
+	function absolute(array $relativeParts):string {return
+		df_media_path_absolute(self::baseRelative()). df_cc_path($relativeParts)
+	;}
 
 	/**
 	 * 2015-12-08
@@ -40,9 +42,6 @@ class Fs {
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathRelativeBase()
 	 */
 	function nameResolution():string {$p = $this->params(); return implode('x', [$p->width(), $p->height()]);}
-
-	/** @return string */
-	private function baseAbsolute():string {return df_media_path_absolute(self::baseRelative());}
 
 	/** @return string */
 	private function baseRelative() {return df_cc_path_t('df', 'api', 'google', 'fonts');}
