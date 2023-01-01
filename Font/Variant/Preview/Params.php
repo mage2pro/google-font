@@ -17,6 +17,7 @@ final class Params  extends \Df\Core\O {
 	function fontColor():array {return $this->rgb($this[self::$P__FONT_COLOR]);}
 
 	/**
+	 * @used-by self::box()
 	 * @used-by self::draw()
 	 * @return int
 	 */
