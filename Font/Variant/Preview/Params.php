@@ -26,9 +26,8 @@ final class Params  extends \Df\Core\O {
 	/**
 	 * 2015-12-01
 	 * @used-by \Df\GoogleFont\Font\Variant::preview()
-	 * @return string
 	 */
-	function getId() {return dfc($this, function() {return implode('-', [
+	function getId():string {return dfc($this, function() {return implode('-', [
 		$this->width()
 		,$this->height()
 		,$this->fontSize()
