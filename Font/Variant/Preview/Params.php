@@ -113,7 +113,7 @@ final class Params  extends \Df\Core\O {
 	private static $P__MARGIN_LEFT = 'marginLeft';
 
 	/**
-	 * @used-by self::STUB()
+	 * @used-by self::width()
 	 * @used-by self::fromRequest()
 	 * @var string
 	 */
