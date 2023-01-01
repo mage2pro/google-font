@@ -19,6 +19,7 @@ final class Params  extends \Df\Core\O {
 	/**
 	 * @used-by self::getId()
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::fontSize()
+	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
 	 * @return int
 	 */
 	function fontSize():int {return $this[self::$P__FONT_SIZE];}
