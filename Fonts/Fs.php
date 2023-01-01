@@ -28,6 +28,7 @@ class Fs {
 
 	/**
 	 * 2015-12-08
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::pathRelativeA()
 	 * @param string[] $p
 	 */
 	function namePng(array $p):string {return df_fs_name(implode('_', $p)) . '.png';}
