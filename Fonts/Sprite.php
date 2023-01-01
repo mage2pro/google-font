@@ -26,7 +26,7 @@ final class Sprite extends Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
 	 * @param resource $image
 	 */
-	protected function draw($image) {
+	protected function draw($image):void {
 		$x = 0; /** @var int $x */
 		$y = 0; /** @var int $y */
 		$this->_datumPoints = [];

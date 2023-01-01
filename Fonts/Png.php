@@ -13,7 +13,7 @@ abstract class Png extends \Df\Core\O {
 	 * @see \Df\GoogleFont\Fonts\Sprite::draw()
 	 * @param resource $image
 	 */
-	abstract protected function draw($image);
+	abstract protected function draw($image):void;
 
 	/**
 	 * 2015-12-08
