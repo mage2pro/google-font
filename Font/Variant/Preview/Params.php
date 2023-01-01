@@ -77,16 +77,45 @@ final class Params  extends \Df\Core\O {
 		static $r; return $r ? $r : $r = new self(dfa(df_request() + $p, array_keys($p)));
 	}
 
-	/** @var string */
+	/**
+	 * @used-by self::bgColor()
+	 * @used-by self::fromRequest()
+	 * @var string
+	 */
 	private static $P__BG_COLOR = 'bgColor';
-	/** @var string */
+
+	/**
+	 * @used-by self::fontColor()
+	 * @used-by self::fromRequest()
+	 * @var string
+	 */
 	private static $P__FONT_COLOR = 'fontColor';
-	/** @var string */
+
+	/**
+	 * @used-by self::STUB()
+	 * @used-by self::fromRequest()
+	 * @var string
+	 */
 	private static $P__FONT_SIZE = 'fontSize';
-	/** @var string */
+
+	/**
+	 * @used-by self::STUB()
+	 * @used-by self::fromRequest()
+	 * @var string
+	 */
 	private static $P__HEIGHT = 'height';
-	/** @var string */
+
+	/**
+	 * @used-by self::STUB()
+	 * @used-by self::fromRequest()
+	 * @var string
+	 */
 	private static $P__MARGIN_LEFT = 'marginLeft';
-	/** @var string */
+
+	/**
+	 * @used-by self::STUB()
+	 * @used-by self::fromRequest()
+	 * @var string
+	 */
 	private static $P__WIDTH = 'width';
 }
