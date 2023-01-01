@@ -56,6 +56,7 @@ final class Params  extends \Df\Core\O {
 
 	/**
 	 * @used-by self::bgColor()
+	 * @used-by self::fontColor()
 	 * @return int[]
 	 */
 	private function rgb(string $colorS):array {return df_int(explode('|', $colorS));}
