@@ -38,7 +38,7 @@ abstract class Png extends \Df\Core\O {
 	 * @see \Df\GoogleFont\Fonts\Sprite::pathRelativeA()
 	 * @return string[]
 	 */
-	abstract protected function pathRelativeA();
+	abstract protected function pathRelativeA():array;
 
 	/**
 	 * @used-by \Df\GoogleFont\Controller\Index\Preview::contents()

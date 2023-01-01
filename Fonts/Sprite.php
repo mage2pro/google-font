@@ -95,7 +95,7 @@ final class Sprite extends Png {
 	 * @used-by \Df\GoogleFont\Fonts\Png::path()
 	 * @return string[]
 	 */
-	protected function pathRelativeA() {return [$this->pathRelativeBase(), $this->fs()->namePng(['i'])];}
+	protected function pathRelativeA():array {return [$this->pathRelativeBase(), $this->fs()->namePng(['i'])];}
 
 	/**
 	 * 2015-12-08
