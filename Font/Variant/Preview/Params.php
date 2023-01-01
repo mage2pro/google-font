@@ -48,7 +48,10 @@ final class Params  extends \Df\Core\O {
 	 */
 	function marginLeft():int {return $this[self::$P__MARGIN_LEFT];}
 
-	/** @return int */
+	/**
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::width()
+	 * @return int
+	 */
 	function width() {return $this[self::$P__WIDTH];}
 
 	/**
