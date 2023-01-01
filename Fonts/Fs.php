@@ -8,11 +8,9 @@ class Fs {
 	 * @used-by \Df\GoogleFont\Font\Variant::ttfPath()
 	 * @used-by \Df\GoogleFont\Fonts\Png::path()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathToDatumPoints()
-	 * @param string[] $relativeParts
+	 * @param string[] $relative
 	 */
-	function absolute(array $relativeParts):string {return
-		df_media_path_absolute(self::baseRelative()). df_cc_path($relativeParts)
-	;}
+	function absolute(array $relative):string {return df_media_path_absolute(self::baseRelative()). df_cc_path($relative);}
 
 	/**
 	 * 2015-12-08
