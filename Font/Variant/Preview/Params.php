@@ -8,7 +8,12 @@ final class Params  extends \Df\Core\O {
 	 */
 	function bgColor():array {return $this->rgb($this[self::$P__BG_COLOR]);}
 
-	/** @return int[] */
+	/**
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
+	 * @used-by self::getId()
+	 * @return int[]
+	 */
 	function fontColor():array {return $this->rgb($this->fontColorRaw());}
 
 	/** @return string */
