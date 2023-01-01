@@ -26,6 +26,8 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-08
 	 * @used-by self::image()
+	 * @see \Df\GoogleFont\Font\Variant\Preview::width()
+	 * @see \Df\GoogleFont\Fonts\Sprite::width()
 	 */
 	abstract protected function width():int;
 

@@ -109,9 +109,8 @@ final class Sprite extends Png {
 	 * поэтому чуть переделал алгоритм.
 	 * @see \Df\GoogleFont\Fonts\Png::width()
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
-	 * @return int
 	 */
-	protected function width() {return $this->numPreviewsInARow() * $this->previewWidth();}
+	protected function width():int {return $this->numPreviewsInARow() * $this->previewWidth();}
 
 	/**
 	 * 2015-12-08
