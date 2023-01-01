@@ -5,6 +5,7 @@ use Df\GoogleFont\Font\Variant\Preview\Params;
 class Fs {
 	/**
 	 * 2015-12-08
+	 * @used-by \Df\GoogleFont\Font\Variant::ttfPath()
 	 * @param string[] $relativeParts
 	 */
 	function absolute(array $relativeParts):string {return $this->baseAbsolute() . df_cc_path($relativeParts);}
