@@ -61,6 +61,7 @@ abstract class Png extends \Df\Core\O {
 	 * и при добавлении в DOM браузер сразу делает кучу запросов к серверу по адресу src.
 	 * Получается, что намного эффективнее сразу построить все картинки в едином запросе.
 	 * 2) Но df-api/google/fontPreview нам всё равно пригодится для динамических запросов!
+	 * @used-by \Df\GoogleFont\Controller\Index\Index::execute()
 	 */
 	function url():string {return dfc($this, function():string {return df_try(
 		function() {$this->createIfNeeded(); return df_media_path2url($this->path());}
