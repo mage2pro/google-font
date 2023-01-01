@@ -64,9 +64,8 @@ final class Params  extends \Df\Core\O {
 	/**
 	 * Этот метод возвращает объект-одиночку, потому что параметры запроса у нас неизменны в течение всей жизни запроса.
 	 * @used-by \Df\GoogleFont\Font\Variant::preview()
-	 * @return Params
 	 */
-	static function fromRequest() {
+	static function fromRequest():Params {
 		$p = [
 			self::$P__BG_COLOR => '255|255|255|127'
 			,self::$P__FONT_COLOR => '0|0|0|0'
