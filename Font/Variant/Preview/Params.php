@@ -35,7 +35,9 @@ final class Params  extends \Df\Core\O {
 		,implode('-', $this->bgColor())
 	]);});}
 
-	/** @return int */
+	/**
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::height()
+	 */
 	function height() {return $this[self::$P__HEIGHT];}
 
 	/**
