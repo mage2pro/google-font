@@ -6,9 +6,8 @@ class Fs {
 	/**
 	 * 2015-12-08
 	 * @param string[] $relativeParts
-	 * @return string
 	 */
-	function absolute(array $relativeParts) {return $this->baseAbsolute() . df_cc_path($relativeParts);}
+	function absolute(array $relativeParts):string {return $this->baseAbsolute() . df_cc_path($relativeParts);}
 
 	/**
 	 * 2015-12-08
