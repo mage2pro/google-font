@@ -92,21 +92,21 @@ final class Params  extends \Df\Core\O {
 	private static $P__FONT_COLOR = 'fontColor';
 
 	/**
-	 * @used-by self::STUB()
+	 * @used-by self::fontSize()
 	 * @used-by self::fromRequest()
 	 * @var string
 	 */
 	private static $P__FONT_SIZE = 'fontSize';
 
 	/**
-	 * @used-by self::STUB()
 	 * @used-by self::fromRequest()
+	 * @used-by self::height()
 	 * @var string
 	 */
 	private static $P__HEIGHT = 'height';
 
 	/**
-	 * @used-by self::STUB()
+	 * @used-by self::marginLeft()
 	 * @used-by self::fromRequest()
 	 * @var string
 	 */
