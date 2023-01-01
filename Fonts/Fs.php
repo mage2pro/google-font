@@ -31,7 +31,7 @@ class Fs {
 	 * @param string[] $params
 	 * @return string
 	 */
-	function namePng(array $params) {return df_fs_name(implode('_', $params)) . '.png';}
+	function namePng(array $params):string {return df_fs_name(implode('_', $params)) . '.png';}
 
 	/**
 	 * 2015-12-08
