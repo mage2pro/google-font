@@ -17,7 +17,7 @@ final class Params  extends \Df\Core\O {
 	function fontColor():array {return $this->rgb($this[self::$P__FONT_COLOR]);}
 
 	/** @return int */
-	function fontSize() {return $this[self::$P__FONT_SIZE];}
+	function fontSize():int {return $this[self::$P__FONT_SIZE];}
 
 	/**
 	 * 2015-12-01
