@@ -61,9 +61,8 @@ final class Sprite extends Png {
 	 * @override
 	 * @see \Df\GoogleFont\Fonts\Png::height()
 	 * @used-by \Df\GoogleFont\Fonts\Png::image()
-	 * @return int
 	 */
-	protected function height() {return dfc($this, function() {return
+	protected function height():int {return dfc($this, function() {return
 		/**
 		 * 2015-12-10
 		 * Результат $this->square() / $this->width() может быть дробным (например: 3796.1538461538),
