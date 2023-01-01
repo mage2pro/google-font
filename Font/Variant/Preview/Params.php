@@ -9,7 +9,7 @@ final class Params  extends \Df\Core\O {
 	function bgColor():array {return $this->rgb($this[self::$P__BG_COLOR]);}
 
 	/** @return int[] */
-	function fontColor() {return $this->rgb($this->fontColorRaw());}
+	function fontColor():array {return $this->rgb($this->fontColorRaw());}
 
 	/** @return string */
 	function fontColorRaw() {return $this[self::$P__FONT_COLOR];}
