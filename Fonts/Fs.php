@@ -39,9 +39,7 @@ class Fs {
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::pathRelativeA()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathRelativeBase()
 	 */
-	function nameResolution():string {return dfc($this, function():string {$p = $this->params(); return
-		implode('x', [$p->width(), $p->height()])
-	;});}
+	function nameResolution():string {$p = $this->params(); return implode('x', [$p->width(), $p->height()]);}
 
 	/** @return string */
 	private function baseAbsolute() {return df_media_path_absolute(self::baseRelative());}
