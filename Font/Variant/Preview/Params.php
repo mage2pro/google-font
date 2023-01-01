@@ -57,7 +57,7 @@ final class Params  extends \Df\Core\O {
 	/**
 	 * @return int[]
 	 */
-	private function rgb(string $colorS) {return df_int(explode('|', $colorS));}
+	private function rgb(string $colorS):array {return df_int(explode('|', $colorS));}
 
 	/**
 	 * Этот метод возвращает объект-одиночку,
