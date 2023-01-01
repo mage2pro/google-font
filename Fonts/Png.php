@@ -43,9 +43,8 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * @used-by \Df\GoogleFont\Controller\Index\Preview::contents()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
-	 * @return string
 	 */
-	final function contents():string {return dfc($this, function() {
+	final function contents():string {return dfc($this, function():string {
 		$this->createIfNeeded();
 		return df_contents($this->path());
 	});}
