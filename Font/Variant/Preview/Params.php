@@ -55,10 +55,9 @@ final class Params  extends \Df\Core\O {
 	function width():int {return $this[self::$P__WIDTH];}
 
 	/**
-	 * @param $colorS
 	 * @return int[]
 	 */
-	private function rgb($colorS) {return df_int(explode('|', $colorS));}
+	private function rgb(string $colorS) {return df_int(explode('|', $colorS));}
 
 	/**
 	 * Этот метод возвращает объект-одиночку,
