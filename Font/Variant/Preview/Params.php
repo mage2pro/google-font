@@ -63,6 +63,8 @@ final class Params  extends \Df\Core\O {
 
 	/**
 	 * Этот метод возвращает объект-одиночку, потому что параметры запроса у нас неизменны в течение всей жизни запроса.
+	 * @used-by \Df\GoogleFont\Font\Variant::p()
+	 * @used-by \Df\GoogleFont\Controller\Index\Index::sprite()
 	 * @used-by \Df\GoogleFont\Font\Variant::preview()
 	 */
 	static function fromRequest():Params {
