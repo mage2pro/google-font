@@ -62,8 +62,7 @@ final class Params  extends \Df\Core\O {
 	private function rgb(string $colorS):array {return df_int(explode('|', $colorS));}
 
 	/**
-	 * Этот метод возвращает объект-одиночку,
-	 * потому что параметры запроса у нас неизменны в течение всей жизни запроса.
+	 * Этот метод возвращает объект-одиночку, потому что параметры запроса у нас неизменны в течение всей жизни запроса.
 	 * @used-by \Df\GoogleFont\Font\Variant::preview()
 	 * @return Params
 	 */
