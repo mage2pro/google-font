@@ -42,7 +42,7 @@ class Fs {
 	function nameResolution():string {$p = $this->params(); return implode('x', [$p->width(), $p->height()]);}
 
 	/** @return string */
-	private function baseAbsolute() {return df_media_path_absolute(self::baseRelative());}
+	private function baseAbsolute():string {return df_media_path_absolute(self::baseRelative());}
 
 	/** @return string */
 	private function baseRelative() {return df_cc_path_t('df', 'api', 'google', 'fonts');}
