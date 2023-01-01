@@ -17,8 +17,7 @@ final class Params  extends \Df\Core\O {
 	function fontColor():array {return $this->rgb($this[self::$P__FONT_COLOR]);}
 
 	/**
-	 * @used-by self::box()
-	 * @used-by self::draw()
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::fontSize()
 	 * @return int
 	 */
 	function fontSize():int {return $this[self::$P__FONT_SIZE];}
