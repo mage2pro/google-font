@@ -38,6 +38,7 @@ final class Params  extends \Df\Core\O {
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::height()
 	 * @used-by \Df\GoogleFont\Fonts\Fs::nameResolution()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::previewHeight()
 	 */
 	function height() {return $this[self::$P__HEIGHT];}
 
