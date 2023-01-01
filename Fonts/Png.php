@@ -18,6 +18,8 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-08
 	 * @used-by self::image()
+	 * @see \Df\GoogleFont\Font\Variant\Preview::height()
+	 * @see \Df\GoogleFont\Fonts\Sprite::height()
 	 */
 	abstract protected function height():int;
 
