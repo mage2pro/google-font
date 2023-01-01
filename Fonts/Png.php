@@ -51,7 +51,7 @@ abstract class Png extends \Df\Core\O {
 
 	/**
 	 * 2015-12-01
-	 * Изначально реализация была «ленивой»:
+	 * 1) Изначально реализация была «ленивой»:
 	 *		$this->exists()
 	 *		? df_media_path2url($this->path())
 	 *		: df_url_frontend('df-api/google/fontPreview', ['_query' => [
@@ -61,9 +61,7 @@ abstract class Png extends \Df\Core\O {
 	 * в клиентской части мы создаём много тегов IMG, и при добавлении в DOM
 	 * браузер сразу делает кучу запросов к серверу по адресу src.
 	 * Получается, что намного эффективнее сразу построить все картинки в едином запросе.
-	 *
-	 * Но df-api/google/fontPreview нам всё равно пригодится для динамических запросов!
-	 *
+	 * 2) Но df-api/google/fontPreview нам всё равно пригодится для динамических запросов!
 	 * @return string
 	 */
 	function url() {return dfc($this, function() {return df_try(
