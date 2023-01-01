@@ -9,6 +9,7 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * 2015-12-08
 	 * @used-by self::image()
+	 * @see \Df\GoogleFont\Font\Variant\Preview::draw()
 	 * @param resource $image
 	 */
 	abstract protected function draw($image);
