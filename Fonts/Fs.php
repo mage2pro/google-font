@@ -15,7 +15,7 @@ class Fs {
 	/**
 	 * 2015-12-08
 	 */
-	function nameColorsSizeMargin():string {return dfc($this, function() {$p = $this->params(); return
+	function nameColorsSizeMargin():string {return dfc($this, function():string {$p = $this->params(); return
 		implode('_', [
 			's' . df_pad0(2, $p->fontSize())
 			,'f' . implode('-', $p->fontColor())
