@@ -6,10 +6,7 @@ final class Params  extends \Df\Core\O {
 	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
 	 * @return int[]
 	 */
-	function bgColor():array {return $this->rgb($this->bgColorRaw());}
-
-	/** @return string */
-	function bgColorRaw() {return $this[self::$P__BG_COLOR];}
+	function bgColor():array {return $this->rgb($this[self::$P__BG_COLOR]);}
 
 	/** @return int[] */
 	function fontColor() {return $this->rgb($this->fontColorRaw());}
