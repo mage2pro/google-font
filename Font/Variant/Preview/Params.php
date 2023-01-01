@@ -50,9 +50,8 @@ final class Params  extends \Df\Core\O {
 
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::width()
-	 * @return int
 	 */
-	function width() {return $this[self::$P__WIDTH];}
+	function width():int {return $this[self::$P__WIDTH];}
 
 	/**
 	 * @param $colorS
