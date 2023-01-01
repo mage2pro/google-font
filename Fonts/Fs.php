@@ -36,6 +36,8 @@ class Fs {
 
 	/**
 	 * 2015-12-08
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::pathRelativeA()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathRelativeBase()
 	 */
 	function nameResolution():string {return dfc($this, function():string {$p = $this->params(); return
 		implode('x', [$p->width(), $p->height()])
