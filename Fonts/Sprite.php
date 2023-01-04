@@ -127,7 +127,7 @@ final class Sprite extends Png {
 	}
 
 	/** @return Fonts */
-	private function fonts() {return $this[self::$P__FONTS];}
+	private function fonts():Fonts {return $this[self::$P__FONTS];}
 
 	/**
 	 * 2015-12-10
