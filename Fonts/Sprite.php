@@ -164,7 +164,7 @@ final class Sprite extends Png {
 	]);});}
 
 	/** @return int */
-	private function previewHeight() {return $this->params()->height();}
+	private function previewHeight():int {return $this->params()->height();}
 
 	/**
 	 * 2015-12-08
