@@ -79,6 +79,7 @@ abstract class Png extends \Df\Core\O {
 
 	/**
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
 	 * @param resource $image
 	 * @param int[] $rgba
 	 */
