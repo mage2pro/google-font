@@ -135,7 +135,7 @@ final class Sprite extends Png {
 	 * однако хорошо иметь и возможность двигать холст.
 	 * @return int
 	 */
-	private function marginY() {return 4;}
+	private function marginY():int {return 4;}
 
 	/**
 	 * 2015-12-08 Количество картинок в одном горизонтальном ряду спрайта.
