@@ -105,6 +105,7 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
+	 * @used-by self::datumPoint()
 	 * @return array(string => int[])
 	 */
 	private function datumPoints():array {
