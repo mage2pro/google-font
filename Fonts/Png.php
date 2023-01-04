@@ -153,7 +153,7 @@ abstract class Png extends \Df\Core\O {
 	}
 
 	/** @return string */
-	private function path() {return dfc($this, function() {return $this->fs()->absolute($this->pathRelativeA());});}
+	private function path():string {return dfc($this, function() {return $this->fs()->absolute($this->pathRelativeA());});}
 
 	/** @var string */
 	protected static $P__PARAMS = 'params';
