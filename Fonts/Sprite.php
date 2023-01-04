@@ -175,7 +175,7 @@ final class Sprite extends Png {
 	 * 2017-01-12: https://3v4l.org/9YXir
 	 * @return Preview[]
 	 */
-	private function previews():array {return dfc($this, function() {return
+	private function previews():array {return dfc($this, function():array {return
 		array_merge(...df_map(function(Font $font) {return
 			array_map(function(Variant $variant) {return
 				$variant->preview()
