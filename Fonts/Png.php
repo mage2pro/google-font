@@ -78,6 +78,7 @@ abstract class Png extends \Df\Core\O {
 	final protected function bgColor():array {return $this->params()->bgColor();}
 
 	/**
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
 	 * @param resource $image
 	 * @param int[] $rgba
 	 */
