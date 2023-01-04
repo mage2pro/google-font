@@ -217,6 +217,7 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
+	 * @used-by \Df\GoogleFont\Controller\Index\Index::sprite()
 	 */
 	static function i(Fonts $fonts, Params $params):self {return new self([
 		self::$P__FONTS => $fonts, self::$P__PARAMS => $params
