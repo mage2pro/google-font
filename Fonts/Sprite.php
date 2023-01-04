@@ -146,6 +146,7 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
+	 * @used-by self::pathRelativeA()
 	 */
 	private function pathRelativeBase():string {return dfc($this, function():string {return
 		df_cc_path('sprite', df_fs_name(implode('_', [$this->fs()->nameResolution(), $this->fs()->nameColorsSizeMargin()])))
