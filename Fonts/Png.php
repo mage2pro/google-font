@@ -92,12 +92,12 @@ abstract class Png extends \Df\Core\O {
 	 * @used-by self::createIfNeeded()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoints()
 	 */
-	protected function create() {
+	protected function create():void {
 		ob_start();
 		try {
-			$image = $this->image();
+			$i = $this->image();
 			try {imagepng($this->image());}
-			finally {imagedestroy($image);}
+			finally {imagedestroy($i);}
 			df_file_write($this->path(), ob_get_contents());
 		}
 		finally {ob_end_clean();}
