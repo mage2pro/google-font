@@ -160,6 +160,9 @@ abstract class Png extends \Df\Core\O {
 	 */
 	private function path():string {return dfc($this, function() {return $this->fs()->absolute($this->pathRelativeA());});}
 
-	/** @var string */
+	/**
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::i()
+	 * @var string
+	 */
 	protected static $P__PARAMS = 'params';
 }
