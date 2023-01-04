@@ -132,7 +132,7 @@ abstract class Png extends \Df\Core\O {
 
 	/**
 	 * @used-by self::draw()
-	 * @return Params
+	 * @used-by self::height()
 	 */
 	protected function params():Params {return $this[self::$P__PARAMS];}
 
