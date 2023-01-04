@@ -155,9 +155,8 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
-	 * @return string
 	 */
-	private function pathToDatumPoints() {return dfc($this, function() {return $this->fs()->absolute([
+	private function pathToDatumPoints():string {return dfc($this, function():string {return $this->fs()->absolute([
 		$this->pathRelativeBase(), 'datum-points.json'
 	]);});}
 
