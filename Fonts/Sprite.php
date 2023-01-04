@@ -77,7 +77,6 @@ final class Sprite extends Png {
 	 * @override
 	 * @see \Df\GoogleFont\Fonts\Png::needToCreate()
 	 * @used-by \Df\GoogleFont\Fonts\Png::createIfNeeded()
-	 * @return bool
 	 */
 	protected function needToCreate():bool {return !file_exists($this->pathToDatumPoints()) || parent::needToCreate();}
 
