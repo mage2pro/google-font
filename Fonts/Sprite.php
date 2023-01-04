@@ -155,6 +155,9 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
+	 * @used-by self::datumPoints()
+	 * @used-by self::draw()
+	 * @used-by self::needToCreate()
 	 */
 	private function pathToDatumPoints():string {return dfc($this, function():string {return $this->fs()->absolute([
 		$this->pathRelativeBase(), 'datum-points.json'
