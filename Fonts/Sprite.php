@@ -209,6 +209,7 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
+	 * @used-by self::draw()
 	 * @used-by self::datumPoint()
 	 * @var array(string => int[])
 	 */
@@ -216,8 +217,6 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
-	 * @param Fonts $fonts
-	 * @param Params $params
 	 * @return \Df\GoogleFont\Fonts\Sprite
 	 */
 	static function i(Fonts $fonts, Params $params) {return new self([self::$P__FONTS => $fonts, self::$P__PARAMS => $params]);}
