@@ -176,7 +176,7 @@ final class Sprite extends Png {
 	 * @return Preview[]
 	 */
 	private function previews():array {return dfc($this, function():array {return
-		array_merge(...df_map(function(Font $font) {return
+		array_merge(...df_map(function(Font $font):array {return
 			array_map(function(Variant $variant):Preview {return
 				$variant->preview()
 			;}, array_values($font->variantsAvailable()))
