@@ -163,7 +163,11 @@ final class Sprite extends Png {
 		$this->pathRelativeBase(), 'datum-points.json'
 	]);});}
 
-	/** @return int */
+	/**
+	 * @used-by self::draw()
+	 * @used-by self::height()
+	 * @used-by self::square()
+	 */
 	private function previewHeight():int {return $this->params()->height();}
 
 	/**
