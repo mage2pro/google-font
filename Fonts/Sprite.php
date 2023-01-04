@@ -126,9 +126,6 @@ final class Sprite extends Png {
 		return $this->_datumPoints;
 	}
 
-	/** @return Fonts */
-	private function fonts():Fonts {return $this[self::$P__FONTS];}
-
 	/**
 	 * 2015-12-10
 	 * Межстрочное расстояние.
@@ -175,7 +172,7 @@ final class Sprite extends Png {
 			array_map(function(Variant $variant) {return
 				$variant->preview()
 			;}, array_values($font->variantsAvailable()))
-		;}, $this->fonts()))
+		;}, $this[self::$P__FONTS]))
 	;});}
 
 	/** @return int */
