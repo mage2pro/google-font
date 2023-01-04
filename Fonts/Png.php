@@ -80,9 +80,8 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * @param resource $image
 	 * @param int[] $rgba
-	 * @return int
 	 */
-	protected function colorAllocateAlpha($image, array $rgba) {return df_assert_nef(
+	protected function colorAllocateAlpha($image, array $rgba):int {return df_assert_nef(
 		imagecolorallocatealpha($image, $rgba[0], $rgba[1], $rgba[2], dfa($rgba, 3, 0))
 	);}
 
