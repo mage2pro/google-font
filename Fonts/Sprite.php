@@ -106,7 +106,7 @@ final class Sprite extends Png {
 	 * 2015-12-08
 	 * @return array(string => int[])
 	 */
-	private function datumPoints() {
+	private function datumPoints():array {
 		if (!$this->_datumPoints) {
 			if (file_exists($this->pathToDatumPoints())) {
 				try {
