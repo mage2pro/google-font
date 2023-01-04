@@ -193,6 +193,8 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08 Площадь спрайта: сумм площадей всех картинок спрайта.
+	 * @used-by self::height()
+	 * @used-by self::numPreviewsInARow()
 	 */
 	private function square():int {return dfc($this, function():int {return
 		($this->previewHeight() + $this->marginY()) * $this->previewWidth() * count($this->previews())
