@@ -155,6 +155,7 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * @used-by self::contents()
 	 * @used-by self::create()
+	 * @used-by self::needToCreate()
 	 * @used-by self::url()
 	 */
 	private function path():string {return dfc($this, function() {return $this->fs()->absolute($this->pathRelativeA());});}
