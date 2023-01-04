@@ -16,7 +16,7 @@ final class Sprite extends Png {
 	 * потому что клиентская часть сама передала их нам и знает их.
 	 * @return int[]
 	 */
-	function datumPoint(Preview $preview) {return dfa($this->datumPoints(), $preview->getId());}
+	function datumPoint(Preview $preview):array {return dfa($this->datumPoints(), $preview->getId());}
 
 	/**
 	 * 2015-12-08
