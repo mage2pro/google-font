@@ -121,7 +121,7 @@ abstract class Png extends \Df\Core\O {
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathRelativeA()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathToDatumPoints()
 	 */
-	protected function fs():Fs {return Fs::s();}
+	final protected function fs():Fs {return Fs::s();}
 
 	/**
 	 * 2015-12-08 Кэшировать результат нельзя!
