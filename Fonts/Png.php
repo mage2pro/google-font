@@ -115,7 +115,11 @@ abstract class Png extends \Df\Core\O {
 		}
 	}
 
-	/** @return Fs */
+	/**
+	 * @used-by self::path()
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::pathRelativeA()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::pathRelativeA()
+	 */
 	protected function fs():Fs {return Fs::s();}
 
 	/**
