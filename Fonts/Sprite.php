@@ -14,7 +14,6 @@ final class Sprite extends Png {
 	 * https://developer.mozilla.org/en-US/docs/Web/CSS/position_value
 	 * Обратите внимание, что размеры изображения шрифта мы клиентской части не передаём,
 	 * потому что клиентская часть сама передала их нам и знает их.
-	 * @param Preview $preview
 	 * @return int[]
 	 */
 	function datumPoint(Preview $preview) {return dfa($this->datumPoints(), $preview->getId());}
