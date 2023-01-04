@@ -138,7 +138,7 @@ abstract class Png extends \Df\Core\O {
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::width()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::previewHeight()
 	 */
-	protected function params():Params {return $this[self::$P__PARAMS];}
+	final protected function params():Params {return $this[self::$P__PARAMS];}
 
 	/**
 	 * 2015-12-08
