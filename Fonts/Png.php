@@ -109,7 +109,7 @@ abstract class Png extends \Df\Core\O {
 	 * @used-by self::url()
 	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoint()
 	 */
-	protected function createIfNeeded() {
+	protected function createIfNeeded():void {
 		if ($this->needToCreate()) {
 			$this->create();
 		}
