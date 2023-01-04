@@ -184,7 +184,7 @@ final class Sprite extends Png {
 	;});}
 
 	/** @return int */
-	private function previewWidth() {return $this->params()->width();}
+	private function previewWidth():int {return $this->params()->width();}
 
 	/**
 	 * 2015-12-08 Площадь спрайта: сумм площадей всех картинок спрайта.
