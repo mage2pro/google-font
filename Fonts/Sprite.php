@@ -133,6 +133,7 @@ final class Sprite extends Png {
 	 * Бывает, что в браузере нам требуется сдвинуть текст чуть вверх.
 	 * Конечно, это в простом случае можно сделать средствами CSS, однако хорошо иметь и возможность двигать холст.
 	 * @used-by self::draw()
+	 * @used-by self::height()
 	 * @used-by self::square()
 	 */
 	private function marginY():int {return 4;}
