@@ -183,7 +183,9 @@ final class Sprite extends Png {
 		;}, $this[self::$P__FONTS]))
 	;});}
 
-	/** @return int */
+	/**
+	 * @used-by self::square()
+	 */
 	private function previewWidth():int {return $this->params()->width();}
 
 	/**
