@@ -146,9 +146,8 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
-	 * @return string
 	 */
-	private function pathRelativeBase() {return dfc($this, function() {return df_cc_path('sprite', df_fs_name(implode('_', [
+	private function pathRelativeBase():string {return dfc($this, function() {return df_cc_path('sprite', df_fs_name(implode('_', [
 		$this->fs()->nameResolution(), $this->fs()->nameColorsSizeMargin()
 	])));});}
 
