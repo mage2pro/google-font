@@ -200,7 +200,11 @@ final class Sprite extends Png {
 		($this->previewHeight() + $this->marginY()) * $this->previewWidth() * count($this->previews())
 	;});}
 
-	/** @var string */
+	/**
+	 * @used-by self::i()
+	 * @used-by self::previews()
+	 * @var string
+	 */
 	private static $P__FONTS = 'fonts';
 
 	/**
