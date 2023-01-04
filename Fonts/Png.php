@@ -127,9 +127,8 @@ abstract class Png extends \Df\Core\O {
 	 * 2015-12-08 Кэшировать результат нельзя!
 	 * @used-by self::createIfNeeded()
 	 * @see \Df\GoogleFont\Fonts\Sprite::needToCreate()
-	 * @return bool
 	 */
-	protected function needToCreate() {return !file_exists($this->path());}
+	protected function needToCreate():bool {return !file_exists($this->path());}
 
 	/**
 	 * @used-by self::draw()
