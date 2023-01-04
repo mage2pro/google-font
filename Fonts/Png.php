@@ -131,8 +131,8 @@ abstract class Png extends \Df\Core\O {
 	protected function needToCreate():bool {return !file_exists($this->path());}
 
 	/**
-	 * @used-by self::draw()
-	 * @used-by self::height()
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::height()
 	 */
 	protected function params():Params {return $this[self::$P__PARAMS];}
 
