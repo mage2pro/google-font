@@ -140,6 +140,7 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08 Количество картинок в одном горизонтальном ряду спрайта.
+	 * @used-by self::width()
 	 */
 	private function numPreviewsInARow():int {return ceil(sqrt($this->square()) / $this->previewWidth());}
 
