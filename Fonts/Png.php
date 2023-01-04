@@ -116,7 +116,7 @@ abstract class Png extends \Df\Core\O {
 	}
 
 	/** @return Fs */
-	protected function fs() {return Fs::s();}
+	protected function fs():Fs {return Fs::s();}
 
 	/**
 	 * 2015-12-08 Кэшировать результат нельзя!
