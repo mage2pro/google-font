@@ -163,6 +163,7 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * @used-by self::params()
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::i()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::i()
 	 * @var string
 	 */
 	protected static $P__PARAMS = 'params';
