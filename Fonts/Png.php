@@ -95,7 +95,7 @@ abstract class Png extends \Df\Core\O {
 	protected function create():void {
 		ob_start();
 		try {
-			$i = $this->image();
+			$i = $this->image(); /** @var resource $i */
 			try {imagepng($this->image());}
 			finally {imagedestroy($i);}
 			df_file_write($this->path(), ob_get_contents());
