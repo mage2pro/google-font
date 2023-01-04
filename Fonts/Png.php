@@ -133,9 +133,10 @@ abstract class Png extends \Df\Core\O {
 	/**
 	 * @used-by self::bgColor()
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by \Df\GoogleFont\Font\Variant\Preview::fontSize()
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::height()
 	 * @used-by \Df\GoogleFont\Font\Variant\Preview::width()
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview::fontSize()
+	 * @used-by \Df\GoogleFont\Fonts\Sprite::previewHeight()
 	 */
 	protected function params():Params {return $this[self::$P__PARAMS];}
 
