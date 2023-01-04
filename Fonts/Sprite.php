@@ -184,7 +184,10 @@ final class Sprite extends Png {
 	;});}
 
 	/**
+	 * @used-by self::draw()
+	 * @used-by self::numPreviewsInARow()
 	 * @used-by self::square()
+	 * @used-by self::width()
 	 */
 	private function previewWidth():int {return $this->params()->width();}
 
