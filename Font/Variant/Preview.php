@@ -1,21 +1,21 @@
 <?php
-namespace Df\GoogleFont\Font\Variant;
-use Df\GoogleFont\Font\Variant;
-use Df\GoogleFont\Font\Variant\Preview\Params;
-final class Preview extends \Df\GoogleFont\Fonts\Png {
+namespace Dfe\GoogleFont\Font\Variant;
+use Dfe\GoogleFont\Font\Variant;
+use Dfe\GoogleFont\Font\Variant\Preview\Params;
+final class Preview extends \Dfe\GoogleFont\Fonts\Png {
 	/**
 	 * 2015-12-08
 	 * Стандартный способ генерации идентификатора нас не устраивает, потому что он создаёт идентификатор случайным образом,
 	 * а нам нужно, чтобы идентификатор был одним и тем же для двух любых запросов к серверу
 	 * (чтобы сопоставлять preview и datumPoints).
-	 * @used-by \Df\GoogleFont\Fonts\Sprite::datumPoint()
-	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
+	 * @used-by \Dfe\GoogleFont\Fonts\Sprite::datumPoint()
+	 * @used-by \Dfe\GoogleFont\Fonts\Sprite::draw()
 	 */
 	function getId():string {return implode(':', [$this->family(), $this->variant()->name()]);}
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Font::variantsAvailable()
+	 * @used-by \Dfe\GoogleFont\Font::variantsAvailable()
 	 */
 	function isAvailable():bool {return !!$this->url();}
 
@@ -24,8 +24,8 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	 * Точка отсчёта системы координат [0, 0] — это самая левая верхняя точка холста.
 	 * Далее кординаты увеличиваются вниз и вправо.
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::draw()
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
+	 * @see \Dfe\GoogleFont\Fonts\Png::draw()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::image()
 	 * @param resource $i
 	 */
 	protected function draw($i):void {
@@ -54,18 +54,18 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	/**
 	 * 2015-12-08
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::height()
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
-	 * @used-by \Df\GoogleFont\Fonts\Sprite::height()
-	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
+	 * @see \Dfe\GoogleFont\Fonts\Png::height()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::image()
+	 * @used-by \Dfe\GoogleFont\Fonts\Sprite::height()
+	 * @used-by \Dfe\GoogleFont\Fonts\Sprite::draw()
 	 */
 	protected function height():int {return $this->params()->height();}
 
 	/**
 	 * 2015-12-08
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::pathRelativeA()
-	 * @used-by \Df\GoogleFont\Fonts\Png::path()
+	 * @see \Dfe\GoogleFont\Fonts\Png::pathRelativeA()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::path()
 	 * @return string[]
 	 */
 	protected function pathRelativeA():array {return [
@@ -78,10 +78,10 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 	/**
 	 * 2015-12-08
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::width()
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
-	 * @used-by \Df\GoogleFont\Fonts\Sprite::width()
-	 * @used-by \Df\GoogleFont\Fonts\Sprite::draw()
+	 * @see \Dfe\GoogleFont\Fonts\Png::width()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::image()
+	 * @used-by \Dfe\GoogleFont\Fonts\Sprite::width()
+	 * @used-by \Dfe\GoogleFont\Fonts\Sprite::draw()
 	 */
 	protected function width():int {return $this->params()->width();}
 
@@ -155,7 +155,7 @@ final class Preview extends \Df\GoogleFont\Fonts\Png {
 
 	/**
 	 * 2015-11-29
-	 * @used-by \Df\GoogleFont\Font\Variant::preview()
+	 * @used-by \Dfe\GoogleFont\Font\Variant::preview()
 	 */
 	static function i(Variant $v, Params $p):Preview {return new self([self::$P__VARIANT => $v, self::$P__PARAMS => $p]);}
 

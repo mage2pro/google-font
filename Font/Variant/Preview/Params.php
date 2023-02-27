@@ -1,16 +1,16 @@
 <?php
-namespace Df\GoogleFont\Font\Variant\Preview;
+namespace Dfe\GoogleFont\Font\Variant\Preview;
 final class Params  extends \Df\Core\O {
 	/**
 	 * @used-by self::getId()
-	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
+	 * @used-by \Dfe\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
 	 * @return int[]
 	 */
 	function bgColor():array {return $this->rgb($this[self::$P__BG_COLOR]);}
 
 	/**
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
-	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
+	 * @used-by \Dfe\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by \Dfe\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
 	 * @used-by self::getId()
 	 * @return int[]
 	 */
@@ -18,14 +18,14 @@ final class Params  extends \Df\Core\O {
 
 	/**
 	 * @used-by self::getId()
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview::fontSize()
-	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
+	 * @used-by \Dfe\GoogleFont\Font\Variant\Preview::fontSize()
+	 * @used-by \Dfe\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
 	 */
 	function fontSize():int {return $this[self::$P__FONT_SIZE];}
 
 	/**
 	 * 2015-12-01
-	 * @used-by \Df\GoogleFont\Font\Variant::preview()
+	 * @used-by \Dfe\GoogleFont\Font\Variant::preview()
 	 */
 	function getId():string {return dfc($this, function():string {return implode('-', [
 		$this->width()
@@ -36,21 +36,21 @@ final class Params  extends \Df\Core\O {
 	]);});}
 
 	/**
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview::height()
-	 * @used-by \Df\GoogleFont\Fonts\Fs::nameResolution()
-	 * @used-by \Df\GoogleFont\Fonts\Sprite::previewHeight()
+	 * @used-by \Dfe\GoogleFont\Font\Variant\Preview::height()
+	 * @used-by \Dfe\GoogleFont\Fonts\Fs::nameResolution()
+	 * @used-by \Dfe\GoogleFont\Fonts\Sprite::previewHeight()
 	 */
 	function height() {return $this[self::$P__HEIGHT];}
 
 	/**
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview::draw()
-	 * @used-by \Df\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
+	 * @used-by \Dfe\GoogleFont\Font\Variant\Preview::draw()
+	 * @used-by \Dfe\GoogleFont\Fonts\Fs::nameColorsSizeMargin()
 	 */
 	function marginLeft():int {return $this[self::$P__MARGIN_LEFT];}
 
 	/**
 	 * @used-by self::getId()
-	 * @used-by \Df\GoogleFont\Font\Variant\Preview::width()
+	 * @used-by \Dfe\GoogleFont\Font\Variant\Preview::width()
 	 */
 	function width():int {return $this[self::$P__WIDTH];}
 
@@ -63,9 +63,9 @@ final class Params  extends \Df\Core\O {
 
 	/**
 	 * Этот метод возвращает объект-одиночку, потому что параметры запроса у нас неизменны в течение всей жизни запроса.
-	 * @used-by \Df\GoogleFont\Controller\Index\Index::sprite()
-	 * @used-by \Df\GoogleFont\Font\Variant::p()
-	 * @used-by \Df\GoogleFont\Font\Variant::preview()
+	 * @used-by \Dfe\GoogleFont\Controller\Index\Index::sprite()
+	 * @used-by \Dfe\GoogleFont\Font\Variant::p()
+	 * @used-by \Dfe\GoogleFont\Font\Variant::preview()
 	 */
 	static function fromRequest():Params {
 		$p = [

@@ -4,8 +4,8 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd"
 >
 	<router id='standard'>
-		<route frontName='df-google-font' id='Df_GoogleFont'>
-			<module name='Df_GoogleFont'/>
+		<route frontName='df-google-font' id='Dfe_GoogleFont'>
+			<module name='Dfe_GoogleFont'/>
 		</route>
 	</router>
 </config>

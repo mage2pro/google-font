@@ -1,5 +1,5 @@
 <?php
-namespace Df\GoogleFont;
+namespace Dfe\GoogleFont;
 # 2015-11-17
 # В документации об этом ни слова не сказано, однако в случае сбоя Google API возвращает JSON следующией структуры:
 #	{

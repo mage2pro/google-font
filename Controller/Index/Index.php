@@ -1,11 +1,11 @@
 <?php
-namespace Df\GoogleFont\Controller\Index;
+namespace Dfe\GoogleFont\Controller\Index;
 use Df\Framework\W\Result\Json;
-use Df\GoogleFont\Font;
-use Df\GoogleFont\Font\Variant;
-use Df\GoogleFont\Font\Variant\Preview\Params;
-use Df\GoogleFont\Fonts as _Fonts;
-use Df\GoogleFont\Fonts\Sprite;
+use Dfe\GoogleFont\Font;
+use Dfe\GoogleFont\Font\Variant;
+use Dfe\GoogleFont\Font\Variant\Preview\Params;
+use Dfe\GoogleFont\Fonts as _Fonts;
+use Dfe\GoogleFont\Fonts\Sprite;
 # 2015-12-08
 /** @final Unable to use the PHP «final» keyword here because of the M2 code generation. */
 class Index extends \Magento\Framework\App\Action\Action {

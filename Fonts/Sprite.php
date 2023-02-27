@@ -1,10 +1,10 @@
 <?php
-namespace Df\GoogleFont\Fonts;
-use Df\GoogleFont\Font;
-use Df\GoogleFont\Font\Variant;
-use Df\GoogleFont\Font\Variant\Preview;
-use Df\GoogleFont\Font\Variant\Preview\Params;
-use Df\GoogleFont\Fonts;
+namespace Dfe\GoogleFont\Fonts;
+use Dfe\GoogleFont\Font;
+use Dfe\GoogleFont\Font\Variant;
+use Dfe\GoogleFont\Font\Variant\Preview;
+use Dfe\GoogleFont\Font\Variant\Preview\Params;
+use Dfe\GoogleFont\Fonts;
 final class Sprite extends Png {
 	/**
 	 * 2015-12-08
@@ -21,8 +21,8 @@ final class Sprite extends Png {
 	/**
 	 * 2015-12-08
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::draw()
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
+	 * @see \Dfe\GoogleFont\Fonts\Png::draw()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::image()
 	 * @param resource $image
 	 */
 	protected function draw($image):void {
@@ -67,24 +67,24 @@ final class Sprite extends Png {
 	 * т.е. считает, что последний ряд заполнен полностью.
 	 * Поэтому добавляем место для ещё одого ряда снизу, чтобы последнему ряду уж наверняка хватило места.
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::height()
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
+	 * @see \Dfe\GoogleFont\Fonts\Png::height()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::image()
 	 */
 	protected function height():int {return ceil($this->square() / $this->width()) + $this->previewHeight() + $this->marginY();}
 
 	/**
 	 * 2015-12-08 Кэшировать результат нельзя!
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::needToCreate()
-	 * @used-by \Df\GoogleFont\Fonts\Png::createIfNeeded()
+	 * @see \Dfe\GoogleFont\Fonts\Png::needToCreate()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::createIfNeeded()
 	 */
 	protected function needToCreate():bool {return !file_exists($this->pathToDatumPoints()) || parent::needToCreate();}
 
 	/**
 	 * 2015-12-08
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::pathRelativeA()
-	 * @used-by \Df\GoogleFont\Fonts\Png::path()
+	 * @see \Dfe\GoogleFont\Fonts\Png::pathRelativeA()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::path()
 	 * @return string[]
 	 */
 	protected function pathRelativeA():array {return [$this->pathRelativeBase(), $this->fs()->namePng(['i'])];}
@@ -98,8 +98,8 @@ final class Sprite extends Png {
 	 * Намного удобнее его смотреть (ну, для тестирования), когда его ширина и высота примерно равны друг другу,
 	 * поэтому чуть переделал алгоритм.
 	 * @override
-	 * @see \Df\GoogleFont\Fonts\Png::width()
-	 * @used-by \Df\GoogleFont\Fonts\Png::image()
+	 * @see \Dfe\GoogleFont\Fonts\Png::width()
+	 * @used-by \Dfe\GoogleFont\Fonts\Png::image()
 	 */
 	protected function width():int {return $this->numPreviewsInARow() * $this->previewWidth();}
 
@@ -217,7 +217,7 @@ final class Sprite extends Png {
 
 	/**
 	 * 2015-12-08
-	 * @used-by \Df\GoogleFont\Controller\Index\Index::sprite()
+	 * @used-by \Dfe\GoogleFont\Controller\Index\Index::sprite()
 	 */
 	static function i(Fonts $f, Params $p):self {return new self([self::$P__FONTS => $f, self::$P__PARAMS => $p]);}
 }
