@@ -112,7 +112,7 @@ final class Sprite extends Png {
 		if (!$this->_datumPoints) {
 			if (file_exists($this->pathToDatumPoints())) {
 				try {
-					$this->_datumPoints = df_json_decode(df_file_read($this->pathToDatumPoints()));
+					$this->_datumPoints = df_json_decode(df_contents($this->pathToDatumPoints()));
 				}
 				catch (\Exception $e) {
 					df_log($e);
