@@ -2,6 +2,7 @@
 namespace Dfe\GoogleFont\Font\Variant;
 use Dfe\GoogleFont\Font\Variant;
 use Dfe\GoogleFont\Font\Variant\Preview\Params;
+use \Throwable as Th; # 2023-08-03 "Treat `\Throwable` similar to `\Exception`": https://github.com/mage2pro/core/issues/311
 final class Preview extends \Dfe\GoogleFont\Fonts\Png {
 	/**
 	 * 2015-12-08
@@ -108,12 +109,12 @@ final class Preview extends \Dfe\GoogleFont\Fonts\Png {
 	 */
 	private function box(int $i):int {return df_try(
 		function() use($i):int {return df_assert_nef(imagettfbbox($this->fontSize(), 0, $this->ttfPath(), $this->text()))[$i];}
-		,function(\Exception $e):void {
+		,function(Th $t):void {
 			throw new \Exception(
 				'Unable to load the TTF file for the font'
 				." «{$this->family()} ({$this->variant()->name()})»: «{$this->ttfPath()}»."
-				."\n" . $e->getMessage()
-				, 0, $e
+				."\n" . df_xts($t)
+				, 0, $t
 			);
 		}
 	);}

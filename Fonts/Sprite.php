@@ -43,8 +43,8 @@ final class Sprite extends Png {
 					imagedestroy($previewImage);
 				}
 			}
-			catch (\Exception $e) {
-				df_log($e);
+			catch (\Throwable $t) {
+				df_log($t);
 			}
 			$x += $this->previewWidth();
 			if ($x >= $this->width()) {
@@ -114,8 +114,8 @@ final class Sprite extends Png {
 				try {
 					$this->_datumPoints = df_json_decode(df_contents($this->pathToDatumPoints()));
 				}
-				catch (\Exception $e) {
-					df_log($e);
+				catch (\Throwable $t) {
+					df_log($t);
 				}
 			}
 			if (!$this->_datumPoints) {

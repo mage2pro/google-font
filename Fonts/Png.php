@@ -66,7 +66,7 @@ abstract class Png extends \Df\Core\O {
 	 */
 	final function url():string {return dfc($this, function():string {return df_try(
 		function() {$this->createIfNeeded(); return df_media_path2url($this->path());}
-		,function(\Exception $e) {df_log($e); return '';}
+		,function(\Throwable $t) {df_log($t); return '';}
 	);});}
 
 	/**

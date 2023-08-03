@@ -56,8 +56,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 		$r = df_http_json($url, $query); /** @var array(string => mixed) $r */
 		/**
 		 * 2015-11-17
-		 * В документации об этом ни слова не сказано,
-		 * однако в случае сбоя Google API возвращает JSON следующией структуры:
+		 * В документации об этом ни слова не сказано, однако в случае сбоя Google API возвращает JSON следующией структуры:
 		 *	{
 		 *		error: {
 		 *			errors: [
@@ -74,8 +73,8 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 		 *	}
 		 * https://developers.google.com/fonts/docs/developer_api
 		 */
-		if ($error = dfa($r, 'error')) { /** @var array(string => mixed)|null $error */
-			throw (new Exception($error))->standard();
+		if ($e = dfa($r, 'error')) { /** @var array(string => mixed)|null $e */
+			throw (new Exception($e))->standard();
 		}
 		return dfa($r, 'items'); # 2015-11-27 https://developers.google.com/fonts/docs/developer_api#Example
 	});}

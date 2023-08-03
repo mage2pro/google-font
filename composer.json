@@ -1,6 +1,6 @@
 {
 	"name": "mage2pro/google-font"
-	,"version": "1.3.2"
+	,"version": "1.3.3"
 	,"description": "Google Font API."
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/mage2pro/google-font"
@@ -11,6 +11,6 @@
 		"homepage": "https://upwork.com/fl/mage2pro",
 		"role": "Developer"
 	}]
-	,"require": {"mage2pro/core": ">=9.9.8", "mage2pro/google": "*"}
+	,"require": {"mage2pro/core": ">=10.2.1", "mage2pro/google": "*"}
 	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\GoogleFont\\": ""}}
 }
