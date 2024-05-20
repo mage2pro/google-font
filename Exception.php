@@ -17,6 +17,7 @@ namespace Dfe\GoogleFont;
 #		}
 #	}
 # https://developers.google.com/fonts/docs/developer_api
+/** @used-by \Dfe\GoogleFont\Fonts::responseA() */
 final class Exception extends \Df\Core\Exception {
 	/**
 	 * 2015-11-27
