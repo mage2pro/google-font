@@ -18,7 +18,7 @@ namespace Dfe\GoogleFont;
 #	}
 # https://developers.google.com/fonts/docs/developer_api
 /** @used-by \Dfe\GoogleFont\Fonts::responseA() */
-final class Exception extends \Df\Core\Exception {
+final class ResponseValidator extends \Df\API\Response\Validator {
 	/**
 	 * 2015-11-27
 	 * @override
