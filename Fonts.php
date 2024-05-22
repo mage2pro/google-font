@@ -2,6 +2,7 @@
 namespace Dfe\GoogleFont;
 use ArrayIterator as AI;
 use Df\Core\Exception as DFE;
+use Dfe\GoogleFont\ResponseValidator as RV;
 use Dfe\Google\Settings as S;
 /** @method static Fonts s() */
 final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
@@ -45,7 +46,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	 * 2022-12-05: We do not need to check that the result is an array: https://3v4l.org/pBUvg
 	 * @used-by self::items()
 	 * @return array(string => mixed)
-	 * @throws ResponseValidator
+	 * @throws RV
 	 */
 	private function responseA():array {return dfc($this, function():array {
 		$debug = true; /** @var bool $debug */ /** @var string $k */
@@ -73,9 +74,7 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 		 *	}
 		 * https://developers.google.com/fonts/docs/developer_api
 		 */
-		if ($e = dfa($r, 'error')) { /** @var array(string => mixed)|null $e */
-			throw (new Exception($e))->standard();
-		}
+		RV::assert(dfa($r, 'error', []));
 		return dfa($r, 'items'); # 2015-11-27 https://developers.google.com/fonts/docs/developer_api#Example
 	});}
 }
