@@ -34,7 +34,7 @@ final class ResponseValidator extends \Df\API\Response\Validator {
 		#		message: "Access Not Configured. The API (Google Fonts Developer API) is not enabled for your project. Please use the Google Developers Console to update your configuration.",
 		#		extendedHelp: "https://console.developers.google.com"
 		#	}
-		'accessNotConfigured' !== dfa(df_first($this['errors']), 'reason') ? '' :
+		'accessNotConfigured' !== dfa(df_first($this->r('errors')), 'reason') ? '' :
 			"You need to setup the Google Fonts' API using the instruction https://mage2.pro/t/269"
 	);}
 
