@@ -37,4 +37,12 @@ final class ResponseValidator extends \Df\API\Response\Validator {
 		'accessNotConfigured' !== dfa(df_first($this['errors']), 'reason') ? '' :
 			"You need to setup the Google Fonts' API using the instruction https://mage2.pro/t/269"
 	);}
+
+	/**
+	 * 2024-05-22 "Remove `Df\Core\Exception::$_data`": https://github.com/mage2pro/core/issues/385
+	 * @override
+	 * @see \Df\API\Response\Validator::valid()
+	 * @used-by \Df\API\Client::_p()
+	 */
+	function valid():bool {return !$this->r();}
 }
