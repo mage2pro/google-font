@@ -26,7 +26,7 @@ final class ResponseValidator extends \Df\API\Response\Validator {
 	 * @used-by \Df\API\Client::_p()
 	 * @used-by \Df\API\Exception::message()
 	 */
-	function short():string {return df_cc_n("Google Fonts API error: «{$this['message']}».",
+	function short():string {return df_cc_n("Google Fonts API error: «{$this->r('message')}».",
 		# 2015-11-28
 		#	{
 		#		domain: "usageLimits",
