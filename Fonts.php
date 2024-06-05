@@ -50,7 +50,8 @@ final class Fonts extends \Df\Core\O implements \Countable, \IteratorAggregate {
 	 */
 	private function responseA():array {return dfc($this, function():array {
 		$debug = true; /** @var bool $debug */ /** @var string $k */
-		list($url, $query) = $debug || !($k = S::s()->serverApiKey())
+		# 2024-06-06 "Use the «Symmetric array destructuring» PHP 7.1 feature": https://github.com/mage2pro/core/issues/379
+		[$url, $query] = $debug || !($k = S::s()->serverApiKey())
 			? ['https://mage2.pro/google-fonts.json', []]
 			: ['https://www.googleapis.com/webfonts/v1/webfonts', ['key' => $k, 'sort' => 'alpha']]
 		;
