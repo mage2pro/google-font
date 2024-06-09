@@ -10,7 +10,7 @@ class Fs {
 	 * @used-by \Dfe\GoogleFont\Fonts\Sprite::pathToDatumPoints()
 	 * @param string[] $rel
 	 */
-	function absolute(array $rel):string {return df_media_path_absolute('df/api/google/fonts/'). df_cc_path($rel);}
+	function absolute(array $rel):string {return df_media_path_abs('df/api/google/fonts/'). df_cc_path($rel);}
 
 	/**
 	 * 2015-12-08
